@@ -1,0 +1,54 @@
+.header_con{
+    width: 100%;
+}
+
+.header_con #category{
+    background: aliceblue;
+    float: right;
+    margin-right: 100px;
+    position: relative;
+    font-size: 14px;
+}
+
+.header_con #category a{
+    line-height: 35px;
+    padding: 0 30px;
+    color: grey;
+    text-decoration: none;
+}
+#ul_category{
+    margin: 0;
+}
+#ul_category li{
+    list-style: none;
+    display: block;
+    float: left;
+}
+#category_show ul{
+    list-style: none;
+    color: grey;
+    background: aliceblue;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+#category_codes{
+    position: absolute;
+    left: 130px;
+    top: 35px;
+}
+#category_essays{
+    position: absolute;
+    left: 215px;
+    top: 35px;
+}
+#category_register{
+    position: absolute;
+    right: 80px;
+    top: 35px;
+}
+#category_about{
+    position: absolute;
+    right: 0;
+    top: 35px;
+}

@@ -1,54 +1,59 @@
 .header_con{
     width: 100%;
 }
-
+.bg_color{
+    background: grey;
+}
 .header_con #category{
-    background: aliceblue;
-    float: right;
-    margin-right: 100px;
-    position: relative;
+    background: lightgray;
+    display: inline-block;
+    position: absolute;
+    left: 40%;
     font-size: 14px;
 }
 
 .header_con #category a{
     line-height: 35px;
-    padding: 0 30px;
-    color: grey;
+    margin: 0 30px;
+    color: black;
     text-decoration: none;
 }
-#ul_category{
-    margin: 0;
-}
-#ul_category li{
+.ul_category{
     list-style: none;
-    display: block;
-    float: left;
+    margin: 0;
+    display: inline-block;
 }
-#category_show ul{
+.li_category{
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+}
+.category_ul {
+    display: none;
     list-style: none;
     color: grey;
-    background: aliceblue;
-    display: inline-block;
     margin: 0;
     padding: 0;
+    background: lightgray;
 }
-#category_codes{
+.category_ul_01{
     position: absolute;
-    left: 130px;
     top: 35px;
+    left: 133px;
 }
-#category_essays{
+.category_ul_02{
     position: absolute;
-    left: 215px;
     top: 35px;
+    left: 225px;
 }
-#category_register{
+.category_ul_03{
     position: absolute;
-    right: 80px;
     top: 35px;
+    right: 171px;
 }
-#category_about{
+.category_ul_04{
+    width: 102px;
     position: absolute;
+    top: 35px;
     right: 0;
-    top: 35px;
 }

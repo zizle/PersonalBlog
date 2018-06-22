@@ -1,3 +1,3 @@
 # PersonalBlog
 Record study blog
-前端静态文件模板，后端后续用python-django实现
+front_end_pc文件夹前端静态文件模板，后端用python-django实现

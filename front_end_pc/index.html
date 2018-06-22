@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="css/index.css">
     <script src="js/jquery-1.12.4.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/index_vue.js"></script>
 </head>
 <body>
     <div class="header_con">
@@ -50,5 +52,62 @@
         </div>
 
     </div>
+<!--用户注册-->
+   <div class="register_con">
+        <div class="reg_title">
+            <h3>用户注册</h3>
+            <a>X</a>
+        </div>
+        <div class="reg_form">
+            <form action="">
+                <ul>
+                    <li>
+                        <label for="" class="control_label">用户名:</label>
+                        <input type="text" class="control_input" name="user_name" placeholder="输入用户名">
+                        <span>&nbsp;</span>
+                    </li>
+                    <li>
+                        <label for="" class="control_label">密码:</label>
+                        <input type="password" class="control_input" name="password" placeholder="输入密码">
+                        <span>&nbsp;</span>
+                    </li>
+                    <li>
+                        <label for="" class="control_label">确认密码:</label>
+                        <input type="password" class="control_input" name="password2" placeholder="再次输入密码">
+                        <span>&nbsp;</span>
+                    </li>
+                    <li>
+                        <label for="" class="control_label">手机号:</label>
+                        <input type="text" class="control_input" name="mobile" placeholder="请输入手机号">
+                        <span>&nbsp;</span>
+                    </li>
+                    <li>
+                        <label for="" class="control_label">图形验证码:</label>
+                        <input type="text" name="img_code" placeholder="输入图形验证码" style="background-image: url('images/pic_code.jpg'); background-size: 40px 25px; background-repeat: no-repeat; background-position: right">
+                        <!--<image src="images/pic_code.jpg" class="img_code"></image>-->
+                        <button>刷新</button>
+                        <span>&nbsp;</span>
+                    </li>
+                    <li>
+                        <label for="" class="control_label">短信验证码:</label>
+                        <input type="text" name="sms_code" placeholder="输入短信验证码">
+                        <button>获取</button>
+                        <span>&nbsp;</span>
+                    </li>
+                    <li class="allow_li">
+                        <input type="checkbox" name="allow">
+                        <label for="" class="allow_label"><a href="">同意用户协议</a></label>
+                        <span>&nbsp;</span>
+                    </li>
+                    <li class="sub_btn">
+                        <a href="#"><input type="button" value="账号登录"></a>
+                        <input type="submit" value="注册">
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+<!--用户登录-->
+
 </body>
 </html>

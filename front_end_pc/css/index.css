@@ -1,3 +1,14 @@
+.cover{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
+    z-index: 998;
+    background: #000;
+    display: block;
+}
 .header_con{
     width: 100%;
 }
@@ -32,7 +43,7 @@
     display: inline-block;
 }
 .category_ul {
-    display: none;
+    display: block;
     list-style: none;
     color: grey;
     margin: 0;
@@ -70,8 +81,8 @@
     top: 100px;
     left: 30%;
     border-radius: 10px;
-    /*display: none;*/
-    display: block;
+    /*display: block;*/
+    z-index: 999;
 }
 .reg_title{
     height: 40px;
@@ -89,6 +100,10 @@
     padding-right: 20px;
     line-height: 40px;
     color: grey;
+}
+.reg_title a:hover{
+    font-size: 23px;
+    color: #fe0000;
 }
 .img_code{
     width: 80px;
@@ -173,7 +188,8 @@
     background: lightgray;
     width: 100%;
     position: fixed;
-    top: 80%;
+    left: 0;
+    top: 86%;
 }
 
 .foot_link{text-align:center;margin-top:10px;}

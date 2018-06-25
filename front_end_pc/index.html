@@ -12,6 +12,8 @@
     <script src="js/host.js"></script>
 </head>
 <body>
+<div id="app">
+<div class='cover' v-if="is_cover"></div>
     <div class="header_con">
         <div id="category">
             <ul class="ul_category">
@@ -33,14 +35,14 @@
                 </li>
                 <li class="li_category">
                     <a href="#">登录</a>
-                     <ul class="category_ul category_ul_03">
+                     <ul @click="fade" class="category_ul category_ul_03">
                         <li><a href="#">QQ登录</a></li>
                         <li><a href="#">微信登录</a></li>
                         <li><a href="#">微博登录</a></li>
                     </ul>
                 </li>
                 <li class="li_category">
-                    <a href="#">注册</a>
+                    <a href="#" @click="register_account">注册</a>
                 </li>
                 <li class="li_category">
                      <a href="#">关于我</a>
@@ -55,10 +57,10 @@
 
     </div>
 <!--用户注册-->
-   <div class="register_con" id="regapp">
+   <div class="register_con" v-if="register_con">
         <div class="reg_title">
             <h3>用户注册</h3>
-            <a>X</a>
+            <a @click="exit_register">X</a>
         </div>
         <div class="reg_form">
             <form action="">
@@ -110,7 +112,7 @@
         </div>
     </div>
 <!--用户登录-->
-
+</div>
 <!--底部菜单-->
    <div class="footer">
         <div class="foot_link">

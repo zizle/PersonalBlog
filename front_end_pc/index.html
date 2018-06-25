@@ -8,6 +8,8 @@
     <script src="js/index.js"></script>
     <script src="js/vue.js"></script>
     <script src="js/index_vue.js"></script>
+    <script src="js/axios-0.18.0.min.js"></script>
+    <script src="js/host.js"></script>
 </head>
 <body>
     <div class="header_con">
@@ -32,9 +34,9 @@
                 <li class="li_category">
                     <a href="#">登录</a>
                      <ul class="category_ul category_ul_03">
-                        <li><a href="#">使用QQ</a></li>
-                        <li><a href="#">微信注册</a></li>
-                        <li><a href="#">微博注册</a></li>
+                        <li><a href="#">QQ登录</a></li>
+                        <li><a href="#">微信登录</a></li>
+                        <li><a href="#">微博登录</a></li>
                     </ul>
                 </li>
                 <li class="li_category">
@@ -53,7 +55,7 @@
 
     </div>
 <!--用户注册-->
-   <div class="register_con">
+   <div class="register_con" id="regapp">
         <div class="reg_title">
             <h3>用户注册</h3>
             <a>X</a>
@@ -83,15 +85,15 @@
                     </li>
                     <li>
                         <label for="" class="control_label">图形验证码:</label>
-                        <input type="text" name="img_code" placeholder="输入图形验证码" style="background-image: url('images/pic_code.jpg'); background-size: 40px 25px; background-repeat: no-repeat; background-position: right">
-                        <!--<image src="images/pic_code.jpg" class="img_code"></image>-->
-                        <button>刷新</button>
+                        <input type="text" class="control_imgpt" name="img_code" placeholder="输入图形验证码">
+                        <image :src="image_code_url" @click="generate_image_code" class="img_code"></image>
+                        <!--<button>刷新</button>-->
                         <span>&nbsp;</span>
                     </li>
                     <li>
                         <label for="" class="control_label">短信验证码:</label>
-                        <input type="text" name="sms_code" placeholder="输入短信验证码">
-                        <button>获取</button>
+                        <input type="text" class="control_imgpt" name="sms_code" placeholder="输入短信验证码">
+                        <button style="margin-left: 10px; width: 66px">获取</button>
                         <span>&nbsp;</span>
                     </li>
                     <li class="allow_li">
@@ -109,5 +111,19 @@
     </div>
 <!--用户登录-->
 
+<!--底部菜单-->
+   <div class="footer">
+        <div class="foot_link">
+            <a href="#">关于我们</a>
+            <span>|</span>
+            <a href="#">联系我们</a>
+            <span>|</span>
+            <a href="#">招聘人才</a>
+            <span>|</span>
+            <a href="#">友情链接</a>
+        </div>
+        <p>CopyRight © 2016 北京美多商业股份有限公司 All Rights Reserved</p>
+        <p>电话：010-****888    京ICP备*******8号</p>
+   </div>
 </body>
 </html>

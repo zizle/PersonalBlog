@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # 安装验证模块应用
-    'verfications.apps.VerficationsConfig',
+    'verifications.apps.VerficationsConfig',
     # 安装用户模块
     'users.apps.UsersConfig',
 ]
@@ -154,6 +154,14 @@ CACHES = {
     "session": {
         "BACKEND": "django_redis.cache.RedisCache",
         "LOCATION": "redis://127.0.0.1:6379/11",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
+    # 保存验证相关的
+    "verify": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/12",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

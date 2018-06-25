@@ -90,6 +90,14 @@
     line-height: 40px;
     color: grey;
 }
+.img_code{
+    width: 80px;
+    line-height: 60px;
+    float: right;
+    position: relative;
+    right: 85px;
+    display: inline-block;
+}
 
 .reg_form li{
     list-style: none;
@@ -103,6 +111,9 @@
 .control_input{
     width: 175px;
 
+}
+.control_imgpt{
+    width: 90px;
 }
 .reg_form span{
     font-size: 12px;
@@ -152,3 +163,21 @@
     border-radius: 5px;
     font-size: 15px;
 }
+
+
+
+/*页面底部样式*/
+.footer{
+	border-top:1px solid #fe0000;
+    font-size: 13px;
+    background: lightgray;
+    width: 100%;
+    position: fixed;
+    top: 80%;
+}
+
+.foot_link{text-align:center;margin-top:10px;}
+.foot_link a,.foot_link span{color:#4e4e4e;}
+.foot_link a:hover{color:#ff8800}
+.foot_link span{padding:0 10px 0 10px}
+.footer p{text-align:center; margin-top:10px;}

@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/jquery-1.12.4.js"></script>
-    <script src="js/index.js"></script>
     <script src="js/vue.js"></script>
-    <script src="js/index_vue.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/axios-0.18.0.min.js"></script>
     <script src="js/host.js"></script>
 </head>
@@ -15,46 +14,20 @@
 <div id="app">
 <div class='cover' v-if="is_cover"></div>
     <div class="header_con">
-        <div id="category">
-            <ul class="ul_category">
-                <li class="ul_category"><a href="#">首页</a></li>
-                <li class="li_category">
-                    <a href="#">代码</a>
-                    <ul class="category_ul category_ul_01">
-                        <li><a href="#">js</a></li>
-                        <li><a href="#">css</a></li>
-                        <li><a href="#">python</a></li>
-                    </ul>
-                </li>
-                <li class="li_category">
-                    <a href="#">便签墙</a>
-                    <ul class="category_ul category_ul_02">
-                        <li><a href="#">留言板</a></li>
-                        <li><a href="#">随手记</a></li>
-                    </ul>
-                </li>
-                <li class="li_category">
-                    <a href="#">登录</a>
-                     <ul @click="fade" class="category_ul category_ul_03">
-                        <li><a href="#">QQ登录</a></li>
-                        <li><a href="#">微信登录</a></li>
-                        <li><a href="#">微博登录</a></li>
-                    </ul>
-                </li>
-                <li class="li_category">
-                    <a href="#" @click="register_account">注册</a>
-                </li>
-                <li class="li_category">
-                     <a href="#">关于我</a>
-                     <ul class="category_ul category_ul_04">
-                        <li><a href="#">github</a></li>
-                        <li><a href="#">CSDN</a></li>
-                        <li><a href="#">邮箱</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
+        <ul>
+            <li><a href="#">欢迎您！</a></li>
+            <li style="padding: 0"><a href="user_center_info.html">林小杰</a></li>
+            <div class="set_right">
+                <li><a href="/">网站首页</a></li>
+                <li><a href="#">知识学习</a></li>
+                <li><a href="#">技术文章</a></li>
+                <li><a href="#">便签墙</a></li>
+                <li><a href="#">用户登录</a></li>
+                <li><a @click="register_account" href="#">账号注册</a></li>
+                <li><a href="user_center_info.html">个人中心</a></li>
+                <li><a href="/">退出</a></li>
+            </div>
+        </ul>
     </div>
 <!--用户注册-->
    <div class="register_con" v-if="register_con">

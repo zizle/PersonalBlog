@@ -9,69 +9,6 @@
     background: #000;
     display: block;
 }
-.header_con{
-    width: 100%;
-}
-.bg_color{
-    background: grey;
-    border-bottom: 1px dashed;
-    color: black;
-
-}
-.header_con #category{
-    background: lightgray;
-    display: inline-block;
-    position: absolute;
-    left: 40%;
-    font-size: 14px;
-}
-
-.header_con #category a{
-    line-height: 35px;
-    margin: 0 30px;
-    color: black;
-    text-decoration: none;
-}
-.ul_category{
-    list-style: none;
-    margin: 0;
-    display: inline-block;
-}
-.li_category{
-    list-style: none;
-    margin: 0;
-    display: inline-block;
-}
-.category_ul {
-    display: block;
-    list-style: none;
-    color: grey;
-    margin: 0;
-    padding: 0;
-    background: lightgray;
-}
-.category_ul_01{
-    position: absolute;
-    top: 36px;
-    left: 133px;
-}
-.category_ul_02{
-    position: absolute;
-    top: 36px;
-    left: 225px;
-}
-.category_ul_03{
-    position: absolute;
-    top: 36px;
-    right: 171px;
-}
-.category_ul_04{
-    width: 102px;
-    position: absolute;
-    top: 36px;
-    right: 0;
-}
-
 .register_con{
     width: 415px;
     height: 460px;
@@ -178,7 +115,22 @@
     border-radius: 5px;
     font-size: 15px;
 }
-
+.pic_info{
+    float: right;
+    position: relative;
+    right: 20px;
+    top: 10px;
+}
+/*头部子类选项动画过度的样式*/
+/*.child_category-leave-active, .child_category-enter-active{*/
+    /*transition:  all 0.3s ease;*/
+/*}*/
+/*.child_category-leave-active, .child_category-enter{*/
+    /*height:0px !important;*/
+/*}*/
+/*.child_category-enter-active, .child_category-leave{*/
+    /*height:105px;*/
+/*}*/
 
 
 /*页面底部样式*/

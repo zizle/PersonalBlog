@@ -1,0 +1,10 @@
+.set_right_user_center{
+    display: inline;
+    position: relative;
+    left: 57%;
+}
+.personal_info_con dl{
+    display: inline-block;
+}
+
+

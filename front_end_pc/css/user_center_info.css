@@ -49,6 +49,11 @@
 }
 .personal_info_detail span{
     padding-right:10px;
+    font-size: 12px;
+    color: lightgray;
+}
+.personal_info_detail a{
+    padding-right:10px;
     font-size: 18px;
     color: #fe0000;
 }
@@ -56,6 +61,72 @@
     margin: 10px 40px;
     font-size: 12px;
     font-weight:normal;
+}
+.personal_detail_con_title{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.blank_li{
+    display:inline-block;
+    float: right;
+    width: 468.5px;
+    height: 42px;
+    border-bottom: 1px solid dimgrey;
+}
+.personal_detail_con_title{
+    font-size: 0;
+
+}
+.personal_detail_con_title li{
+    width: 180px;
+    background: lightgray;
+    text-align: center;
+    display: inline;
+    border-top: 2px solid dimgrey;
+    border-right: 1px solid dimgrey;
+    border-bottom: 1px solid dimgrey;
+}
+.personal_detail_con ul{
+    padding: 0;
+}
+.personal_detail_con li{
+    list-style: none;
+    display: inline-block;
+    margin: 0;
+    font-size: 18px;
+    line-height: 40px;
+}
+.personal_detail_con_content{
+    width: 90%;
+    margin: 0 auto;
+}
+.article_title{
+    margin: 0;
+    margin-bottom: 20px;
+}
+.article_title li{
+    display: block;
+    margin-left: 20px;
+    border-bottom: 1px dashed gray;
+}
+.article_name{
+    padding: 15px 0;
+    display: inline-block;
+    font-size: 16px;
+    color: darkturquoise;
+}
+.article_time{
+    font-size: 13px;
+    float: right;
+    padding: 15px;
+    color: grey;
+}
+.article_delete{
+    float: right;
+    padding: 15px;
+    font-size: 12px;
+    color: grey;
 }
 
 

@@ -31,9 +31,9 @@
     font-size: 13px;
     background: lightgray;
     width: 100%;
-    position: fixed;
-    left: 0;
-    top: 86%;
+    /*position: fixed;*/
+    /*left: 0;*/
+    /*top: 86%;*/
 }
 
 .foot_link{

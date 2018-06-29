@@ -9,6 +9,10 @@
     background: white;
     border: 0.5px solid gainsboro;
 }
+.personal_info{
+    margin-left: 60px;
+
+}
 .modify_info{
     padding: 10px 30px;
     float: right;
@@ -54,7 +58,7 @@
 }
 .personal_info_detail a{
     padding-right:10px;
-    font-size: 18px;
+    font-size: 16px;
     color: #fe0000;
 }
 .personal_des_title{
@@ -70,7 +74,7 @@
 .blank_li{
     display:inline-block;
     float: right;
-    width: 468.5px;
+    width: 496px;
     height: 42px;
     border-bottom: 1px solid dimgrey;
 }
@@ -86,6 +90,7 @@
     border-top: 2px solid dimgrey;
     border-right: 1px solid dimgrey;
     border-bottom: 1px solid dimgrey;
+    cursor: pointer;
 }
 .personal_detail_con ul{
     padding: 0;
@@ -108,13 +113,14 @@
 .article_title li{
     display: block;
     margin-left: 20px;
-    border-bottom: 1px dashed gray;
+    border-bottom: 1px double #e3e3e3;
 }
 .article_name{
     padding: 15px 0;
     display: inline-block;
     font-size: 16px;
-    color: darkturquoise;
+    color: #80b8ff;
+    cursor: pointer;
 }
 .article_time{
     font-size: 13px;
@@ -127,7 +133,7 @@
     padding: 15px;
     font-size: 12px;
     color: grey;
+    cursor: pointer;
 }
-
 
 

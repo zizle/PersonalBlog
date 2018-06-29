@@ -1,91 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>首页</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/index.css">
-    <script src="js/vue.js"></script>
-    <script src="js/index.js"></script>
-    <script src="js/axios-0.18.0.min.js"></script>
-    <script src="js/host.js"></script>
+	<meta charset="utf-8" />
+	<title>首页</title>
+	<!-- add styles -->
+	<link href="css/main.css" rel="stylesheet" type="text/css" />
+	
 </head>
 <body>
-<div id="app">
-<div class='cover' v-if="is_cover"></div>
-    <div class="header_con">
-        <ul>
-            <li><a href="#">欢迎您！</a></li>
-            <li style="padding: 0"><a href="user_center_info.html">林小杰</a></li>
-            <div class="set_right">
-                <li><a href="/">网站首页</a></li>
-                <li><a href="#">知识学习</a></li>
-                <li><a href="#">技术文章</a></li>
-                <li><a href="#">便签墙</a></li>
-                <li><a href="#">用户登录</a></li>
-                <li><a @click="register_account" href="#">账号注册</a></li>
-                <li><a href="user_center_info.html">个人中心</a></li>
-                <li><a href="/">退出</a></li>
-            </div>
-        </ul>
-    </div>
-<!--用户注册-->
-   <div class="register_con" v-if="register_con">
-        <div class="reg_title">
-            <h3>用户注册</h3>
-            <a @click="exit_register">X</a>
-        </div>
-        <div class="reg_form">
-            <form action="">
-                <ul>
-                    <li>
-                        <label for="" class="control_label">用户名:</label>
-                        <input type="text" class="control_input" name="user_name" placeholder="输入用户名">
-                        <span>&nbsp;</span>
-                    </li>
-                    <li>
-                        <label for="" class="control_label">密码:</label>
-                        <input type="password" class="control_input" name="password" placeholder="输入密码">
-                        <span>&nbsp;</span>
-                    </li>
-                    <li>
-                        <label for="" class="control_label">确认密码:</label>
-                        <input type="password" class="control_input" name="password2" placeholder="再次输入密码">
-                        <span>&nbsp;</span>
-                    </li>
-                    <li>
-                        <label for="" class="control_label">手机号:</label>
-                        <input type="text" class="control_input" name="mobile" placeholder="请输入手机号">
-                        <span>&nbsp;</span>
-                    </li>
-                    <li>
-                        <label for="" class="control_label">图形验证码:</label>
-                        <input type="text" class="control_imgpt" name="img_code" placeholder="输入图形验证码">
-                        <image :src="image_code_url" @click="generate_image_code" class="img_code"></image>
-                        <!--<button>刷新</button>-->
-                        <span>&nbsp;</span>
-                    </li>
-                    <li>
-                        <label for="" class="control_label">短信验证码:</label>
-                        <input type="text" class="control_imgpt" name="sms_code" placeholder="输入短信验证码">
-                        <button style="margin-left: 10px; width: 66px">获取</button>
-                        <span>&nbsp;</span>
-                    </li>
-                    <li class="allow_li">
-                        <input type="checkbox" name="allow">
-                        <label for="" class="allow_label"><a href="">同意用户协议</a></label>
-                        <span>&nbsp;</span>
-                    </li>
-                    <li class="sub_btn">
-                        <a href="#"><input type="button" value="账号登录"></a>
-                        <input type="submit" value="注册">
-                    </li>
-                </ul>
-            </form>
-        </div>
-    </div>
-<!--用户登录-->
-</div>
+	<div class="container">
+		<ul class="menu">
+			<li><a href="/">首页</a></li>
+			<li><a href="#">知识学习</a>
+				<ul class="submenu">
+					<li><a href="#">Submenu a</a></li>
+					<li><a href="#">Submenu b</a></li>
+					<li><a href="#">Submenu c</a></li>
+					<li><a href="#">Submenu d</a></li>
+					<li><a href="#">Submenu e</a></li>
+					<li><a href="#">Submenu f</a></li>
+					<li><a href="#">Submenu g</a></li>
+					<li><a href="#">Submenu h</a></li>
+				</ul>
+			</li>
+			<li class="active"><a href="#s2">技术文章</a>
+				<ul class="submenu">
+					<li><a href="#">Submenu a</a></li>
+					<li><a href="#">Submenu b</a></li>
+					<li><a href="#">Submenu c</a></li>
+					<li><a href="#">Submenu d</a></li>
+					<li><a href="#">Submenu e</a></li>
+					<li><a href="#">Submenu f</a></li>
+					<li><a href="#">Submenu g</a></li>
+					<li><a href="#">Submenu h</a></li>
+				</ul>
+			</li>
+			<li class="active"><a href="#s2">便签墙</a>
+				<ul class="submenu">
+					<li><a href="#">Submenu a</a></li>
+					<li><a href="#">Submenu b</a></li>
+					<li><a href="#">Submenu c</a></li>
+					<li><a href="#">Submenu d</a></li>
+					<li><a href="#">Submenu e</a></li>
+					<li><a href="#">Submenu f</a></li>
+					<li><a href="#">Submenu g</a></li>
+					<li><a href="#">Submenu h</a></li>
+				</ul>
+			</li>
+			<li><a href="user_center_info.html">个人中心</a>
+				<ul class="submenu">
+					<li><a href="#">Submenu a</a></li>
+					<li><a href="#">Submenu b</a></li>
+					<li><a href="#">Submenu c</a></li>
+					<li><a href="#">Submenu d</a></li>
+					<li><a href="#">Submenu e</a></li>
+					<li><a href="#">Submenu f</a></li>
+					<li><a href="#">Submenu g</a></li>
+					<li><a href="#">Submenu h</a></li>
+				</ul>
+			</li>
+			<li><a href="#">登录</a>
+				<ul class="submenu">
+					<li><a href="#">QQ登录</a></li>
+					<li><a href="#">微信登录</a></li>
+					<li><a href="#">Submenu</a></li>
+
+				</ul>
+			</li>
+			<li><a href="register_login.html">注册</a></li>
+		</ul>
+	</div>
+<div style="height: 600px"></div>
 <!--底部菜单-->
    <div class="footer">
         <div class="foot_link">
@@ -100,5 +85,6 @@
         <p>CopyRight © 2016 北京美多商业股份有限公司 All Rights Reserved</p>
         <p>电话：010-****888    京ICP备*******8号</p>
    </div>
+
 </body>
 </html>

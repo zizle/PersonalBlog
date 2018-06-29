@@ -1,0 +1,104 @@
+.register_con{
+    width: 415px;
+    height: 460px;
+    background: whitesmoke;
+    border: 1px lightgray;
+    position: fixed;
+    top: 100px;
+    left: 30%;
+    border-radius: 10px;
+}
+.reg_title{
+    height: 40px;
+    background: gainsboro;
+    border-radius: 10px 10px 0 0;
+}
+
+.reg_title h3{
+    margin: 0 15px;
+    line-height: 40px;
+    display: inline;
+}
+.reg_title a{
+    float: right;
+    padding-right: 20px;
+    line-height: 40px;
+    color: grey;
+}
+.reg_title a:hover{
+    font-size: 23px;
+    color: #fe0000;
+}
+.img_code{
+    width: 80px;
+    line-height: 60px;
+    float: right;
+    position: relative;
+    right: 85px;
+    display: inline-block;
+}
+
+.reg_form li{
+    list-style: none;
+
+}
+.reg_form input{
+
+    height: 25px;
+    border-radius: 3px;
+}
+.control_input{
+    width: 175px;
+
+}
+.control_imgpt{
+    width: 90px;
+}
+.reg_form span{
+    font-size: 12px;
+    color: red;
+    display:block;
+    text-align: left;
+    width: 100px;
+    margin-left: 120px;
+}
+.reg_form label{
+    display: inline-block;
+    width: 90px;
+    height: 30px;
+    text-align: right;
+    font-size: 15px;
+    margin-right: 10px;
+}
+.reg_form .allow_label{
+    width: 100px;
+    font-size: 14px;
+    margin: 0;
+    text-align: left;
+    height: 15px;
+}
+.allow_li span{
+    margin-left: 30px;
+}
+.reg_form .allow_li{
+    margin: 0 80px;
+    height: 40px;
+}
+.reg_form .allow_li input{
+    height: 10px;
+}
+.reg_form .sub_btn{
+    margin: 10px;
+    padding: 0 20px;
+
+
+}
+.reg_form .sub_btn input{
+    margin-left:35px;
+    border: 1px;
+    background: gainsboro;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 15px;
+}

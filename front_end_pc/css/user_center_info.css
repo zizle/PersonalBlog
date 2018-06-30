@@ -1,13 +1,10 @@
-.set_right_user_center{
-    display: inline;
-    position: relative;
-    left: 57%;
-}
+
 .personal_info_con{
     margin: 20px auto;
     width: 90%;
     background: white;
     border: 0.5px solid gainsboro;
+    opacity: 0.8;
 }
 .personal_info{
     margin-left: 60px;
@@ -66,9 +63,11 @@
     font-size: 12px;
     font-weight:normal;
 }
+
 .personal_detail_con_title{
     width: 90%;
     margin: 0 auto;
+
 }
 
 .blank_li{
@@ -91,6 +90,7 @@
     border-right: 1px solid dimgrey;
     border-bottom: 1px solid dimgrey;
     cursor: pointer;
+    opacity: 0.8;
 }
 .personal_detail_con ul{
     padding: 0;
@@ -105,6 +105,8 @@
 .personal_detail_con_content{
     width: 90%;
     margin: 0 auto;
+    background: white;
+    opacity: 0.8;
 }
 .article_title{
     margin: 0;

@@ -1,9 +1,365 @@
-.w_main_left {
-    font: 12px "宋体", Arial, Helvetica, sans-serif;
-    color: #756F71;
+.breadcrumb {
+    width: 70%;
+    padding: 8px 15px;
+    margin: 30px 0px 10px 16px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 4px 35px 0 4px;
+    font-size: 12px;
 }
+
+
+.collected{
+    display:inline-block;
+    width:100px;
+    height:36px;
+    color:#666;
+    border-radius:4px;
+    font-size:14px;
+    margin:10px 5px;
+    background:url(../img/collect_icons.png) 15px -73px no-repeat #e6e6e6;
+    position:relative;
+    overflow:hidden;
+}
+
+.collected:hover{
+    background-position:10px -73px;
+}
+
+.collected .out{
+    position:absolute;
+    left:40px;
+    top:8px;
+}
+
+.collected:hover .out{
+    left:40px;
+    top:35px;
+}
+
+.collected .over{
+    position:absolute;
+    left:40px;
+    top:35px;
+}
+
+.collected:hover .over{
+    left:33px;
+    top:8px;
+}
+
+
+.collection{
+    display:inline-block;;
+    width:98px;
+    line-height:34px;
+    text-indent:45px;
+    border:1px solid #3791ef;
+    color:#3791ef;
+    border-radius:4px;
+    font-size:14px;
+    margin:0px 5px;
+    background:url(../img/collect_icons.png) 21px 7px no-repeat;
+    overflow:hidden;
+}
+.collected{
+    display:inline-block;
+    width:100px;
+    height:36px;
+    color:#666;
+    border-radius:4px;
+    font-size:14px;
+    margin:0px 5px;
+    background:url(../img/collect_icons.png) 15px -73px no-repeat #e6e6e6;
+    position:relative;
+    overflow:hidden;
+}
+.collection:hover{
+    text-decoration: none;
+    background:url(../img/collect_icons.png) 21px -33px no-repeat;
+}
+.collected:hover .out{
+    left:40px;
+    top:35px;
+}
+
+.collected .over{
+    position:absolute;
+    left:40px;
+    top:35px;
+}
+.collected:hover .over{
+    left:33px;
+    top:8px;
+}
+
+.block-center {
+    display: block;
+    margin: 0 auto;
+}
+
+.comment_form_logout{
+    border:1px solid #e3e8ee;
+    margin-left: 20px;
+    width:95%;
+    border-radius:4px;
+    padding:15px 10px;
+    outline:none;
+    font-size:16px;
+    margin-top:50px;
+}
+.comment_form{
+    /*width: 80%;*/
+    margin-top:20px;
+    overflow:hidden;
+}
+.comment_form .person_pic{
+    float:left;
+    width:40px;
+    height:40px;
+    margin: 5px 0;
+}
+
+.comment_form img{
+    width:50px;
+    height:50px;
+    border-radius:20px;
+}
+
+.comment_form .comment_input{
+    float:left;
+    width:95%;
+    height:60px;
+    margin-left:20px;
+    border-radius:4px;
+    padding:10px;
+    outline:none;
+    border:1px solid #2185ed;
+}
+
+.comment_form .comment_sub{
+    float: right;
+    width: 58px;
+    height: 28px;
+    border: 1px solid #2185ed;
+    background: #fff;
+    border-radius: 4px;
+    margin: 10px 25px 0 0;
+    cursor: pointer;
+}
+
+
+.comment_form .comment_sub:hover{
+    background:#2185ed;
+    color:#fff;
+}
+
+.comment_count{
+    font-size: 16px;
+    color: #333;
+    border-bottom: 1px solid #ebebeb;
+    padding: 10px 0 0 20px;
+    display: block;
+}
+
+/*评论样式开始*/
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.comment_list{
+    border-bottom:1px solid #ebebeb;
+    overflow:hidden;
+    margin-top:15px;
+    padding-bottom:15px;
+}
+
+.comment_list_con{
+    width: 100%;
+    padding: 20px;
+}
+.comment_list .person_pic{
+    width:40px;
+    height:40px;
+
+}
+
+.comment_list .person_pic img{
+    width:40px;
+    height:40px;
+    border-radius:20px;
+
+}
+
+.user_name{
+    width:690px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #333;
+    margin-left:20px;
+
+}
+
+.comment_text{
+    width:95%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    margin:5px 0 0 50px;
+
+}
+
+.comment_time{
+    font-size:12px;
+    color:#999;
+    /*margin:10px 0 0 60px;*/
+
+}
+
+.comment_up{
+    font-size:12px;
+    color:#999;
+    text-indent:20px;
+    /*margin:10px 0 0 20px;*/
+    background:url(../img/zan_icon.png) left top 6px no-repeat;
+}
+
+.has_comment_up{
+    font-size:12px;
+    color:#999;
+    text-indent:20px;
+    /*margin:10px 0 0 20px;*/
+
+    background:url(../img/zan_icon.png) left bottom 9px no-repeat;
+}
+
+
+
+.comment_reply{
+    font-size:12px;
+    color:#999;
+    text-indent:20px;
+    /*margin:10px 0 0 20px;*/
+    background:url(../img/reply_icon.png) left center no-repeat;
+}
+
+
+.reply_text_con{
+    width:89%;
+    padding:10px;
+    background:#fafafa;
+    margin:10px 0 0 80px;
+}
+
+.reply_text_con .user_name2{
+    font-size:12px;
+    font-weight:bold;
+    color:#000;
+    margin-bottom:5px;
+}
+
+.reply_text_con .reply_text{
+    color:#666;
+    font-size:12px;
+}
+
+.reply_form{
+    width:100%;
+    overflow:hidden;
+    margin:10px 0 0 50px;
+    display:block;
+}
+.sub_reply_form{
+    width:740px;
+    overflow:hidden;
+    /*margin:10px 0 0 60px;*/
+    display:block;
+}
+
+.reply_input{
+    float:left;
+    width:93%;
+    height:30px;
+    line-height: 25px;
+    border-radius:4px;
+    outline:none;
+    border:1px solid #2185ed;
+}
+.sub_reply_input{
+    float:left;
+    width:91%;
+    height:30px;
+    line-height: 25px;
+    border-radius:4px;
+
+    outline:none;
+    border:1px solid #2185ed;
+}
+
+
+
+
+.comment_btn{
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 55px;
+}
+.reply_btn{
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 65px;
+}
+.comment_btn input, .reply_btn input{
+    margin-left: 10px;
+    background:#76b6f4;
+      border:0px;
+    border-radius:2px;
+    cursor:pointer;
+}
+
+.comment_opt{
+    display: block;
+    height: 30px;
+    padding-right: 10px;
+}
+.comment_time{
+    margin-top: 3px;
+}
+.comment_opt a{
+    margin-left: 10px;
+    line-height: 30px;
+}
+
+/*评论样式结束*/
+
+
+.w_main_left {
+    width: 850px;
+    font-family: "宋体", Arial, Helvetica, sans-serif;
+    color: #756F71;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    opacity: 0.95;
+
+
+
+}
+.w_main_right{
+    width: 300px;
+    position: relative;
+    min-height: 1px;
+    padding-right: 0px;
+    padding-left: 0px;
+    opacity: 0.95;
+}
+
 .content{
-    padding: 40px;
+    padding: 0px 40px 40px 40px;
 }
 .c_titile {
     font-size: 22px;
@@ -46,13 +402,33 @@ ul.infos p {
     line-height: 30px;
     height: 30px;
     padding-left: 40px;
+    margin-bottom: 30px;
     border: 1px solid #F0F0F0;
+    position: relative;
 }
 .keybq span {
     color: #099;
+
 }
-.keybq .label{
-	margin-right: 10px;
+.keybq ul{
+    margin: 0;
+    position: absolute;
+    padding-left: 50px;
+
+   bottom: -1px;
+
+}
+
+.keybq li{
+	display: inline-block;
+    width: 66px;
+    height: 20px;
+    line-height: 20px;
+    background: #91b0d5;
+    text-align: center;
+    border-radius: 8px;
+    color: white;
+
 }
 .nextinfo {
 	margin: 25px 0px;

@@ -1,15 +1,41 @@
 /*透明设置*/
 .w_main_right{
     opacity: 0.95;
-    float: right;
+    /*float: right;*/
     position: absolute;
     top: 0;
     left: 75%;
 
 }
+
+.article_category{
+	width: 100%;
+	height: 40px;
+	background: #5f5f5f;
+	border-radius: 5px 40px 0 0 ;
+}
+.article_category ul {
+	padding: 0;
+
+}
+.article_category li{
+	display: inline-block;
+	line-height: 40px;
+	width: 85px;
+	list-style: none;
+	font-size: 16px;
+
+	text-align: center;
+
+}
+.panel .panel-default{
+	border: none !important;
+	border-radius: 0 0 4px 4px !important;
+ }
 .panel-heading{
-    background: blue;
-    color: white;
+    background: lightgrey;
+	border: 2px;
+	border-radius: 5px 5px 0 0;
 }
 .w_main_row{
     margin: 30px auto ;

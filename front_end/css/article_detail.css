@@ -1,5 +1,5 @@
 .breadcrumb {
-    width: 70%;
+    width: 72.5%;
     padding: 8px 15px;
     margin: 30px 0px 10px 16px;
     list-style: none;
@@ -337,7 +337,7 @@
 
 
 .w_main_left {
-    width: 850px;
+    width:75%;
     font-family: "宋体", Arial, Helvetica, sans-serif;
     color: #756F71;
     position: relative;

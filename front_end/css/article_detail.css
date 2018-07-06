@@ -1,11 +1,13 @@
 .breadcrumb {
-    width: 72.5%;
+    width: 75%;
     padding: 8px 15px;
-    margin: 30px 0px 10px 16px;
+    margin-top: 40px;
+    /*margin: 30px 15px 10px 16px;*/
     list-style: none;
     background-color: #f5f5f5;
     border-radius: 4px 35px 0 4px;
     font-size: 12px;
+
 }
 
 
@@ -267,13 +269,13 @@
 }
 
 .reply_form{
-    width:100%;
+    width:95%;
     overflow:hidden;
     margin:10px 0 0 50px;
     display:block;
 }
 .sub_reply_form{
-    width:740px;
+    width:105%;
     overflow:hidden;
     /*margin:10px 0 0 60px;*/
     display:block;
@@ -342,19 +344,19 @@
     color: #756F71;
     position: relative;
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    float: left;
     opacity: 0.95;
 
 
 
 }
 .w_main_right{
-    width: 300px;
-    position: relative;
-    min-height: 1px;
-    padding-right: 0px;
-    padding-left: 0px;
+    width: 23%;
+    float: right;
+    /*position: relative;*/
+    /*min-height: 1px;*/
+    /*padding-right: 0px;*/
+    /*padding-left: 0px;*/
     opacity: 0.95;
 }
 

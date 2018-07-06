@@ -3,21 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>白码非码 - 文章</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/article_detail.css"/>
+	<link href="logo.ico" rel="shortcut icon"/>
+	<!--回到顶部按钮-->
+	<script src="plugin/jquery.min.js"></script>
+	<!--背景轮播-->
+	<script src="js/backstretch.min.js"></script>
 </head>
-<link rel="stylesheet" href="css/main.css">
-
-<link href="css/bootstrap.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/article_detail.css"/>
-<link href="logo.ico" rel="shortcut icon"/>
-<!--回到顶部按钮-->
-<script src="plugin/jquery.min.js"></script>
-<!--背景轮播-->
-<script src="js/backstretch.min.js"></script>
-
-
 <body>
-<!--导航菜单栏-->
-	<div class="navigation_menu">
+	<div class="container">
+		<!--导航菜单栏-->
+		<div class="navigation_menu">
 		<ul class="menu">
 			<li><a href="/">首页</a></li>
 			<li><a href="#">知识学习</a>
@@ -54,11 +52,6 @@
 			</li>
 		</ul>
 	</div>
-
-
-	<div class="w_container">
-	<div class="container">
-		<div class="row w_main_row">
 		<!--面包屑导航条-->
 		<ol class="breadcrumb w_breadcrumb">
 				  <li><a href="home.html">首页</a></li>
@@ -66,197 +59,241 @@
 				  <li><a href="#">Python</a></li>
 				  <li class="active">我的个人博客之——阿里云空间选择</li>
 				</ol>
-		<!--左边主体-->
-		<div class="col-lg-9 col-md-9 w_main_left">
-			<!--文章详情主显示框-->
-			<div class="panel panel-default">
-				<!--文章体-->
-				<div class="panel-body">
-				<!--文章标题-->
-				<h2 class="c_titile">我的个人博客之——阿里云空间选择</h2>
-				<!--文章的相关信息-->
-				<p class="box_c"><span class="d_time">发布时间：2017-02-05</span><span>作者：<a href="mailto:wfyv@qq.com">wilco</a></span><span>阅读：88646</span></p>
-					<!--文章内容开始-->
-					<div class="content">
-						<h2>文章主题</h2>
-<p><code></code><code></code></p>
-						<p><code>print('hahahhahaha')</code></p>
-<p><code>h哈哈啊哈啊啊</code></p>
-						<p><code></code><code></code></p>
-						<p><code>print('hello world')</code></p>
-<p><code></code></p>
-<p><code></code></p>
-<p>这是python代码。</p>
-						<pre class="brush:python;toolbar:false">print(&#39;hello world&#39;)</pre>
-<p style="text-align: center;">
-    <em><span style="color: rgb(255, 0, 0);"><strong>这是代码</strong></span></em>
-</p>
-								<p>之前服务器放在电信机房， 联通用户访问速度很不稳定，经常出现访问速度慢的问题，换到阿里云解决了之前的问题。很多人都问我的博客选得什么空间，一年的费用得多少钱，今天我列个表出来，供大家参考。</p>
-								<p>对于访问量不大，小型网站带宽可以选择1M的，每个月￥56.80，一年也就568块钱，每天投入也就不到2块钱。</p>
-								<p><strong>1、为什么选Linux？</strong></p>
-								<p>程序用PHP，速度快，配置低（windows必选1G的内存Linux选512MB能同样达到要求）。Linux的系统安全性非常高。Linux服务器的维护与扩展到性价比和性能都高于Windows。</p>
-								<p>1) 最流行的服务器端操作系统，强大的安全性和稳定性</p>
-								<p>2) 免费且开源，轻松建立和编译源代码</p>
-								<p>3) 通过SSH方式远程访问您的云服务器</p>
-								<p>4) 一般用于高性能web等服务器应用，支持常见的PHP/Python等编程语言，支持MySQL等数据库（需自行安装)</p>
-								<p><strong>2、操作系统为什么选CentOS 安全加固版（推荐）？</strong></p>
-								<p>在原 CentOS镜像的基础上，系统进一步安全加固，安装了阿里云独有的入侵防御系统，系统中会出现aegis进程，该系统增加了实时后门，Webshell检测，更加智能的暴力破解防御和多种入侵行为监控，让服务器更加安全可靠。</p>
-								<p><a href="http://www.aliyun.com/product/ecs" target="_blank"><strong><span style="color: rgb(0, 0, 255);">前往阿里云官网购买&gt;&gt;</span></strong></a></p>
-								<p>&nbsp;</p><p align="center" class="pageLink"></p>
+		<div class="w_main_row">
+
+			<!--左边主体-->
+			<div class="w_main_left">
+				<!--文章详情主显示框-->
+				<div class="panel panel-default">
+					<!--文章体-->
+					<div class="panel-body">
+						<!--文章标题-->
+						<h2 class="c_titile">我的个人博客之——阿里云空间选择</h2>
+						<!--文章的相关信息-->
+						<p class="box_c"><span class="d_time">发布时间：2017-02-05</span><span>作者：<a href="mailto:wfyv@qq.com">wilco</a></span><span>阅读：88646</span></p>
+						<!--文章内容开始-->
+						<div class="content">
+							<h2>文章主题</h2>
+									<p><code></code><code></code></p>
+							<p><code>print('hahahhahaha')</code></p>
+								<p><code>h哈哈啊哈啊啊</code></p>
+							<p><code></code><code></code></p>
+							<p><code>print('hello world')</code></p>
+							<p><code></code></p>
+							<p><code></code></p>
+							<p>这是python代码。</p>
+													<pre class="brush:python;toolbar:false">print(&#39;hello world&#39;)</pre>
+							<p style="text-align: center;">
+								<em><span style="color: rgb(255, 0, 0);"><strong>这是代码</strong></span></em>
+							</p>
+							<p>之前服务器放在电信机房， 联通用户访问速度很不稳定，经常出现访问速度慢的问题，换到阿里云解决了之前的问题。很多人都问我的博客选得什么空间，一年的费用得多少钱，今天我列个表出来，供大家参考。</p>
+							<p>对于访问量不大，小型网站带宽可以选择1M的，每个月￥56.80，一年也就568块钱，每天投入也就不到2块钱。</p>
+							<p><strong>1、为什么选Linux？</strong></p>
+							<p>程序用PHP，速度快，配置低（windows必选1G的内存Linux选512MB能同样达到要求）。Linux的系统安全性非常高。Linux服务器的维护与扩展到性价比和性能都高于Windows。</p>
+							<p>1) 最流行的服务器端操作系统，强大的安全性和稳定性</p>
+							<p>2) 免费且开源，轻松建立和编译源代码</p>
+							<p>3) 通过SSH方式远程访问您的云服务器</p>
+							<p>4) 一般用于高性能web等服务器应用，支持常见的PHP/Python等编程语言，支持MySQL等数据库（需自行安装)</p>
+							<p><strong>2、操作系统为什么选CentOS 安全加固版（推荐）？</strong></p>
+							<p>在原 CentOS镜像的基础上，系统进一步安全加固，安装了阿里云独有的入侵防御系统，系统中会出现aegis进程，该系统增加了实时后门，Webshell检测，更加智能的暴力破解防御和多种入侵行为监控，让服务器更加安全可靠。</p>
+							<p><a href="http://www.aliyun.com/product/ecs" target="_blank"><strong><span style="color: rgb(0, 0, 255);">前往阿里云官网购买&gt;&gt;</span></strong></a></p>
+							<p>&nbsp;</p><p align="center" class="pageLink"></p>
+						</div>
+						<!--文章内容结束-->
+
+						<!--关键字显示框-->
+						<div class="keybq">
+											<span>关键字</span>：
+											<ul>
+												<li >个人博客</li>
+												<li >阿里云</li>
+												<li >空间</li>
+												<li >空间</li>
+												<li >空间</li>
+												<li >空间</li>
+											</ul>
+										</div>
+
+						<hr>
+
+						<!--收藏按钮-->
+						<a href="javascript:;" class="collection block-center">收藏</a>
+						<a href="javascript:;" class="collected block-center"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
+
+						<!--上下篇指引-->
+						<div class="nextinfo">
+										<p class="last">上一篇：<a href="#">免费收录网站搜索引擎登录口大全</a></p>
+										<p class="next">下一篇：<a href="#">javascript显示年月日时间代码</a></p>
+									</div>
+					</div>
+
+					<!--未登录显示-->
+					<div class="comment_form_logout" style="display: block">
+				登录发表你的评论
+			</div>
+
+					<!--已登录显示评论框-->
+					<form action="" class="comment_form">
+						<textarea placeholder="请发表您的评论" class="comment_input"></textarea>
+						<input type="submit" name="" value="评 论" class="comment_sub">
+					</form>
+
+					<!--评论条数展示-->
+					<div class="comment_count">
+						4条评论
+					</div>
+
+					<!--评论列表开始-->
+					<div class="comment_list_con">
+						<div class="comment_list">
+							<div class="person_pic fl">
+								<img src="img/pic_code.jpg" alt="用户图标">
+							</div>
+							<div class="user_name fl">用户张山</div>
+							<div class="comment_text fl">
+								遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
+
+							<div class="comment_opt">
+								<div class="comment_time fl">2017-01-01 00:00:10</div>
+
+									<a href="javascript:;" class="comment_up fr">赞</a>
+									<a href="javascript:;" class="comment_reply fr">回复</a>
 
 							</div>
-					<!--文章内容结束-->
 
+							</div>
+							<from class="reply_form fl">
+								<textarea  class="reply_input"></textarea>
+								<div class="comment_btn fr">
+									<input type="reset" name="" value="取消">
+									<input type="submit" name="" value="回复">
+								</div>
+							</from>
 
+							<div class="reply_text_con fl">
+								<div class="user_name2">用户李思回复@<a href="">用户张三</a></div>
+								<div class="reply_text">
+									遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
 
-					<!--关键字显示框-->
-					<div class="keybq">
-										<span>关键字</span>：
-										<ul>
-											<li >个人博客</li>
-											<li >阿里云</li>
-											<li >空间</li>
-											<li >空间</li>
-											<li >空间</li>
-											<li >空间</li>
-										</ul>
-									</div>
-					<hr>
+								</div>
+								<div class="comment_opt">
+								<div class="comment_time fl">2017-01-01 00:00:00</div>
+									<a href="javascript:;" class="comment_up has_comment_up fr">1</a>
+									<a href="javascript:;" class="comment_reply fr">回复</a>
+								</div>
+								<from class="sub_reply_form fl">
+									<textarea  class="sub_reply_input"></textarea>
 
-					<!--收藏按钮-->
-					<a href="javascript:;" class="collection block-center">收藏</a>
-					<a href="javascript:;" class="collected block-center"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
+									<div class="reply_btn fr">
+										<input type="reset" name="" value="取消">
+										<input type="submit" name="" value="回复">
 
+								</div>
+									</from>
+							</div>
 
-					<!--上下篇指引-->
-					<div class="nextinfo">
-								<p class="last">上一篇：<a href="#">免费收录网站搜索引擎登录口大全</a></p>
-								<p class="next">下一篇：<a href="#">javascript显示年月日时间代码</a></p>
-						    </div>
+						</div>
 
-			</div>
+						<div class="comment_list">
+					<div class="person_pic fl">
+						<img src="img/pic_code.jpg" alt="用户图标">
+					</div>
+					<div class="user_name fl">用户张山</div>
+					<div class="comment_text fl">
+						遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
 
-				<!--未登录显示-->
-        <div class="comment_form_logout" style="display: block">
-            登录发表你的评论
-        </div>
-
-		<!--已登录显示评论框-->
-        <form action="" class="comment_form">
-
-            <textarea placeholder="请发表您的评论" class="comment_input"></textarea>
-            <input type="submit" name="" value="评 论" class="comment_sub">
-        </form>
-
-		<!--评论条数展示-->
-        <div class="comment_count">
-            4条评论
-        </div>
-
-		<!--评论列表开始-->
-		<div class="comment_list_con">
-            <div class="comment_list">
-                <div class="person_pic fl">
-                    <img src="img/pic_code.jpg" alt="用户图标">
-                </div>
-                <div class="user_name fl">用户张山</div>
-                <div class="comment_text fl">
-                    遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-
-				<div class="comment_opt">
-					<div class="comment_time fl">2017-01-01 00:00:10</div>
-
-						<a href="javascript:;" class="comment_up fr">赞</a>
+					<div class="comment_opt">
+						<div class="comment_time fl">2017-01-01 00:00:00</div>
+						<a href="javascript:;" class="comment_up has_comment_up fr">21111</a>
 						<a href="javascript:;" class="comment_reply fr">回复</a>
+					</div>
+
+					</div>
+					<from class="reply_form fl">
+						<textarea  class="reply_input" name="text"></textarea>
+						<div class="comment_btn fr">
+							<input type="reset" name="" value="取消">
+							<input type="submit" name="" value="回复">
+						</div>
+					</from>
+
+					<div class="reply_text_con fl">
+						<div class="user_name2">用户李思回复@<a href="">用户张三</a></div>
+						<div class="reply_text">
+							遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
+
+						</div>
+						<div class="comment_opt">
+						<div class="comment_time fl">2017-01-01 00:00:00</div>
+							<a href="javascript:;" class="comment_up fr">赞</a>
+							<a href="javascript:;" class="comment_reply fr">回复</a>
+						</div>
+						<from class="sub_reply_form fl">
+							<textarea  class="sub_reply_input"></textarea>
+
+							<div class="reply_btn fr">
+								<input type="reset" name="" value="取消">
+								<input type="submit" name="" value="回复">
+
+						</div>
+							</from>
+					</div>
 
 				</div>
 
-                </div>
-				<from class="reply_form fl">
-                    <textarea  class="reply_input"></textarea>
-					<div class="comment_btn fr">
-						<input type="reset" name="" value="取消">
-						<input type="submit" name="" value="回复">
+						<div class="comment_list">
+					<div class="person_pic fl">
+						<img src="img/pic_code.jpg" alt="用户图标">
 					</div>
-                </from>
+					<div class="user_name fl">用户张山</div>
+					<div class="comment_text fl">
+						遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
 
-                <div class="reply_text_con fl">
-                    <div class="user_name2">用户李思回复@<a href="">用户张三</a></div>
-                    <div class="reply_text">
-                        遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-
-                    </div>
 					<div class="comment_opt">
-					<div class="comment_time fl">2017-01-01 00:00:00</div>
-						<a href="javascript:;" class="comment_up has_comment_up fr">1</a>
+						<div class="comment_time fl">2017-01-01 00:00:00</div>
+						<a href="javascript:;" class="comment_up has_comment_up fr">21111</a>
 						<a href="javascript:;" class="comment_reply fr">回复</a>
 					</div>
-					<from class="sub_reply_form fl">
-						<textarea  class="sub_reply_input"></textarea>
-
-						<div class="reply_btn fr">
-							<input type="reset" name="" value="取消">
-							<input type="submit" name="" value="回复">
 
 					</div>
-						</from>
-                </div>
+					<from class="reply_form fl">
+						<textarea  class="reply_input" name="text"></textarea>
+						<div class="comment_btn fr">
+							<input type="reset" name="" value="取消">
+							<input type="submit" name="" value="回复">
+						</div>
+					</from>
 
-            </div>
+					<div class="reply_text_con fl">
+						<div class="user_name2">用户李思回复@<a href="">用户张三</a></div>
+						<div class="reply_text">
+							遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
 
-			<div class="comment_list">
-                <div class="person_pic fl">
-                    <img src="img/pic_code.jpg" alt="用户图标">
-                </div>
-                <div class="user_name fl">用户张山</div>
-                <div class="comment_text fl">
-                    遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
+						</div>
+						<div class="comment_opt">
+						<div class="comment_time fl">2017-01-01 00:00:00</div>
+							<a href="javascript:;" class="comment_up fr">赞</a>
+							<a href="javascript:;" class="comment_reply fr">回复</a>
+						</div>
+						<from class="sub_reply_form fl">
+							<textarea  class="sub_reply_input"></textarea>
 
-				<div class="comment_opt">
-					<div class="comment_time fl">2017-01-01 00:00:00</div>
-					<a href="javascript:;" class="comment_up has_comment_up fr">21111</a>
-					<a href="javascript:;" class="comment_reply fr">回复</a>
+							<div class="reply_btn fr">
+								<input type="reset" name="" value="取消">
+								<input type="submit" name="" value="回复">
+
+						</div>
+							</from>
+					</div>
+
 				</div>
-
-                </div>
-				<from class="reply_form fl">
-                    <textarea  class="reply_input" name="text"></textarea>
-                    <div class="comment_btn fr">
-						<input type="reset" name="" value="取消">
-						<input type="submit" name="" value="回复">
 					</div>
-				</from>
-
-                <div class="reply_text_con fl">
-                    <div class="user_name2">用户李思回复@<a href="">用户张三</a></div>
-                    <div class="reply_text">
-                        遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-
-                    </div>
-					<div class="comment_opt">
-					<div class="comment_time fl">2017-01-01 00:00:00</div>
-						<a href="javascript:;" class="comment_up fr">赞</a>
-						<a href="javascript:;" class="comment_reply fr">回复</a>
-					</div>
-					<from class="sub_reply_form fl">
-						<textarea  class="sub_reply_input"></textarea>
-
-						<div class="reply_btn fr">
-							<input type="reset" name="" value="取消">
-							<input type="submit" name="" value="回复">
-
-					</div>
-						</from>
-                </div>
-
-            </div>
-
-        </div>
-		<!--评论列表结束-->
+					<!--评论列表结束-->
+				</div>
 			</div>
-		</div>
 
-		<div class="fr w_main_right">
+			<!--右边主体-->
+			<div class="w_main_right">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">最新发布</h3>
@@ -276,6 +313,61 @@
 						</ul>
 				</div>
 			</div>
+
+			<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">友情链接</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="newContent">
+					    	<ul class="list-unstyled sidebar shiplink">
+								<li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+								<li><a href="https://www.oschina.net/" target="_blank">开源中国</a></li>
+								<li><a href="http://www.ulewo.com/" target="_blank">有乐网</a></li>
+								<li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
+								<li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
+							</ul>
+					    </div>
+					  </div>
+					</div>
+
+			<div class="panel panel-default">
+					  <div class="panel-heading">
+					    <h3 class="panel-title">友情链接</h3>
+					  </div>
+					  <div class="panel-body">
+					    <div class="newContent">
+					    	<ul class="list-unstyled sidebar shiplink">
+								<li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+								<li><a href="https://www.oschina.net/" target="_blank">开源中国</a></li>
+								<li><a href="http://www.ulewo.com/" target="_blank">有乐网</a></li>
+								<li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
+								<li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
+							</ul>
+					    </div>
+					  </div>
+					</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">最新发布</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-unstyled sidebar">
+								<li><a href="/post/04928311">排序算法之冒泡排序 － java实现</a></li>
+								<li><a href="/post/32097759">快速搭建基于二进制日志文件的 mysql 复制</a></li>
+								<li><a href="/post/09196557">web 服务器负载均衡教程，快速搭建高可用服务器集群</a></li>
+								<li><a href="/post/20654391">使用 redis 和 spring-session 实现 tomcat、glassfish 等 web 服务器集群 session 共享</a></li>
+								<li><a href="/post/41501569">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></li>
+								<li><a href="/post/89658700">mysql 复制（replication）基础概念和应用场景简介</a></li>
+								<li><a href="/post/03088922">redis 单节点在 Linux 生产环境的安装和简单配置</a></li>
+								<li><a href="/post/05203355">使用 jQuery 的 val() 方法来获取以及设置表单元素值</a></li>
+								<li><a href="/post/03120718">使用 jQuery 的 removeProp() 方法来删除元素的特性（property）</a></li>
+								<li><a href="/post/37454977">使用 jQuery 的 prop() 方法来获取以及设置元素的特性（property）</a></li>
+						</ul>
+				</div>
+			</div>
+
 			<div class="panel panel-default">
 					  <div class="panel-heading">
 					    <h3 class="panel-title">友情链接</h3>
@@ -293,20 +385,12 @@
 					  </div>
 					</div>
 		</div>
+
 		</div>
 	</div>
-	</div>
-	<!--toTop-->
-	<div id="shape">
-		<div class="shapeColor">
-			<div class="shapeFly">
-			</div>
-		</div>
-	</div>
-	<!--snow-->
-	<!--<div class="snow-container"></div>-->
-<!--底部栏-->
-<div class="footer">
+
+	<!--底部栏-->
+	<div class="footer">
         <div class="foot_link">
             <a href="#">关于我们</a>
             <span>|</span>
@@ -321,6 +405,7 @@
     </div>
 </body>
 <script>
+	// 回到顶部
 	var $backToTopEle = $('<a href="javascript:void(0)" class="Hui-iconfont toTop" title="返回顶部" alt="返回顶部" style="display:none">^</a>').appendTo($("body")).click(function() {
 		$("html, body").animate({ scrollTop: 0 }, 120);
 	});
@@ -333,7 +418,6 @@
 			$backToTopEle.css("top", st + winh - 166);
 		}
 	};
-
 	$(function() {
 		$(window).on("scroll", backToTopFun);
 		backToTopFun();

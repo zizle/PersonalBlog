@@ -1,7 +1,4 @@
-html,body{
-	height: 100%;
-	background: #ededed;
-}
+
 *{
 	box-sizing: border-box;
 	-moz-box-sizing:border-box;
@@ -117,11 +114,7 @@ a,a:hover{
 	min-height: 100%;
 	padding: 0px 0px 40px 0px;
 }
-.w_main_row{
-	/*padding-left: 15px;
-	padding-right: 15px;*/
 
-}
 .w_main_left{
 	margin: 20px 0px;
 	/*padding: 0px 10px 0px 0px;*/
@@ -309,14 +302,14 @@ a,a:hover{
 	font-size:13px;
 }
 
-/* totop */
-.toTop{position:fixed;bottom:10px;right:20px; z-index:999;display:none; font-size:16px;cursor: pointer;overflow:hidden;visibility:visible; background-color:#fff;border: 1px solid #d9d9d9;color: #9c9c9c;font-size: 16px;width: 38px;height: 38px;line-height: 38px;text-align: center; text-decoration:none;_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight)}
-.toTop:hover{ color:#fff; text-decoration:none; background-color:#999}
+/*!* totop *!*/
+/*.toTop{position:fixed;bottom:10px;right:20px; z-index:999;display:none; font-size:16px;cursor: pointer;overflow:hidden;visibility:visible; background-color:#fff;border: 1px solid #d9d9d9;color: #9c9c9c;font-size: 16px;width: 38px;height: 38px;line-height: 38px;text-align: center; text-decoration:none;_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight)}*/
+/*.toTop:hover{ color:#fff; text-decoration:none; background-color:#999}*/
 
 
 /*导航条*/
 .w_breadcrumb{
-	margin: 25px 15px 0px 15px;
+	margin: 55px 15px 0px 15px;
 	height: 20px;
 	border-bottom: #337ab7 1px solid;
 	padding: 3px;

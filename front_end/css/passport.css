@@ -1,0 +1,23 @@
+.callback{
+		 position: absolute;
+		 font-size: 15px;
+		 color: white;
+		 z-index: 9;
+		 cursor: pointer;
+	 }
+	 .callback a{
+		 color: white;
+	 }
+
+      .cavs{
+    	z-index:1;
+    	position: fixed;
+    	width:95%;
+    	margin-left: 20px;
+    	margin-right: 20px;
+    }
+.footer{
+	position: absolute;
+	bottom: -90px;
+	left: 0;
+}

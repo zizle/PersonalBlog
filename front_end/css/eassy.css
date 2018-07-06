@@ -1,5 +1,19 @@
 /* CSS Document */
-.moodlist { margin: auto; width: 100%; overflow: hidden }
+
+.container{
+	width: 92%;
+	/*background: whitesmoke;*/
+	/*opacity: 0.6;*/
+}
+
+
+
+.moodlist { margin: auto;
+	width: 100%;
+	overflow: hidden;
+
+
+}
 /* --------------------博客列表-------------------- */
 h1.t_nav span{ float:right; color:#999}
 h1.t_nav { border-bottom: #337ab7 1px solid; font-size: 12px; font-weight: normal; line-height: 40px; height: 40px;width:100% }

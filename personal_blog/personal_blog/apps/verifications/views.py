@@ -22,3 +22,7 @@ class GenerateImageCodeView(APIView):
         print('图片验证码:', text)
         # 返回数据
         return HttpResponse(image, content_type='image/jpg')
+
+
+
+# class

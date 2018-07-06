@@ -1,14 +1,22 @@
 /*透明设置*/
 .w_main_right{
     opacity: 0.95;
-    /*float: right;*/
-    position: absolute;
-    top: 0;
-    left: 75%;
+	width: 25%;
+	float: right;
+
+
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*left: 75%;*/
 
 }
+.w_main_left{
+	width: 72%;
+	float: left;
+}
 .container{
-	width: 89%;
+	width: 92%;
+	/*float: left;*/
 }
 
 .article_category{
@@ -42,7 +50,7 @@
 }
 .w_main_row{
     margin: 30px auto ;
-    margin-left: -3%;
+
     position: relative;
 }
 
@@ -197,7 +205,9 @@
 
 /*日历样式*/
 #CalendarMain {
-	width: 300px;
+	/*width: 100%;*/
+	/*height: 100%;*/
+	/*!*width: 300px;*!*/
 	height: 300px;
 }
 #title {

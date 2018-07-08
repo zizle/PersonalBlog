@@ -1,6 +1,4 @@
 window.onload = function () {
-
-
     var vm = new Vue({
         el: '#app',
         data: {
@@ -64,9 +62,12 @@ window.onload = function () {
 					responseType: 'json',
 				})
 					.then(response => {
+						alert('注册成功')
+						alert(response.data)
 
 					})
 					.catch(error => {
+						alert('失败')
 
 					})
             },

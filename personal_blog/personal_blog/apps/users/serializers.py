@@ -16,7 +16,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
     img_code_id = serializers.CharField(label='图片验证码id', write_only=True)
 
     class Meta:
-        models = User
+        model = User
         fields = ('id', 'username', 'password', 'password2', 'email', 'img_code', 'img_code_id', 'allow')
 
         extra_kwargs = {

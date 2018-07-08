@@ -3,10 +3,12 @@ from rest_framework.views import APIView
 from django_redis import get_redis_connection
 from personal_blog.libs.captcha.captcha import captcha
 from django.http import HttpResponse
+from rest_framework.generics import CreateAPIView
 
 from . import constants
 
 
+# 生成图片验证码视图
 class GenerateImageCodeView(APIView):
     """生成图片验证码"""
     def get(self, request, image_code_id):
@@ -23,6 +25,3 @@ class GenerateImageCodeView(APIView):
         # 返回数据
         return HttpResponse(image, content_type='image/jpg')
 
-
-
-# class

@@ -1,3 +1,110 @@
+.login_register{
+	width:100%;
+	text-align: center;margin: 0 auto;position: absolute;
+}
+.message{
+	color: #fe0000;
+	/*display: none;*/
+}
+.login_box, .register_box{
+	z-index: 100;
+	display: block;
+	width: 32%;
+	margin: 100px auto;
+	position: relative;
+	background: #000;
+	opacity: 0.8;
+}
+
+
+.login_title{
+	color: whitesmoke;
+}
+
+.main_input_box {
+	width: 70%;
+	margin:25px auto;
+	text-align:center;
+	font-size:13px;
+	line-height: 40px;
+}
+.main_input_box input{
+	margin: 0;
+	height: 35px;
+	padding: 0;
+	border: 1px solid grey;
+	border-radius: 0;
+	display: inline-block;
+
+}
+.main_input_box img{
+	width: 25px;
+	height: 20px;
+}
+.member_psd{
+	width: 70%;
+	margin: -25px 0 0 50px;
+	text-align: right;
+
+}
+.allow{
+	width: 70%;
+	margin: -15px 0 0 50px;
+	text-align: center;
+}
+
+.allow a{
+	font-size: 10px;
+}
+.allow i{
+	color: white;
+}
+.member_psd input{
+	margin-bottom: 8px;
+	font-size: 20px;
+}
+.member_psd i{
+	color: white;
+	font-size: 15px;
+}
+
+.form-actions{
+	width: 70%;
+	padding: 14px 20px 15px;
+	margin: 0 auto;
+	background:none;
+	border-top:1px solid #3f4954;
+
+}
+.login_img_code{
+	float: left;
+}
+.login_img_code img{
+	width: 30px;
+	height: 30px;
+}
+.login_img_code input{
+	width: 50px;
+	margin: 0;
+}
+.login_img_code #codeImg{
+	width: 70px;
+}
+.login_btn{
+	float: right;
+	height: 30px;
+}
+.login_btn a, .register_btn a{
+	display: inline-block;
+	width: 50px;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 10px;
+	background: #28b779;
+	color: black;
+}
+
+
 .callback{
 		 position: absolute;
 		 font-size: 15px;

@@ -4,6 +4,11 @@
 }
 .message{
 	color: #fe0000;
+	margin-left: 20%;
+	line-height: 15px;
+
+	position: absolute;
+
 	/*display: none;*/
 }
 .login_box, .register_box{
@@ -22,11 +27,21 @@
 }
 
 .main_input_box {
-	width: 70%;
+	width: 75%;
 	margin:25px auto;
+
 	text-align:center;
 	font-size:13px;
 	line-height: 40px;
+}
+.sign_right{
+	display: inline;
+	width: 25px;
+	height: 20px;
+	padding-top:10px ;
+	padding-left: 5px;
+	position: absolute;
+
 }
 .main_input_box input{
 	margin: 0;
@@ -40,6 +55,7 @@
 .main_input_box img{
 	width: 25px;
 	height: 20px;
+	padding-right: 10px;
 }
 .member_psd{
 	width: 70%;
@@ -102,6 +118,12 @@
 	margin-left: 10px;
 	background: #28b779;
 	color: black;
+}
+.register_sub{
+	width: 50px;
+	height: 30px;
+	margin-bottom: 2.5px;
+	background: #28b779;
 }
 
 

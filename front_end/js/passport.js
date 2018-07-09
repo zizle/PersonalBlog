@@ -3,16 +3,45 @@ window.onload = function () {
         el: '#app',
         data: {
             host,
-			show_message:false,
-            login_show: true,
-            register_show: false,
-            image_code_id: '',
-            image_code_url: '',
+			// 显示错误信息
+			show_error_username:false,
+			show_error_password: false,
+			show_error_passeword2: false,
+			show_error_email: false,
+			show_error_allow: false,
+			show_error_image_code: false,
 
+			// 错误信息内容
+			username_error_message: '',
+			password_error_message: '',
+			password2_error_message: '',
+			email_error_message: '',
+			image_code_error_message: '',
+
+			// 显示哪个窗口
+            login_show: true,
+			register_show: false,
+
+			// 显示对勾
+			username_right: false,
+			password_right: false,
+			password2_right: false,
+			email_right: false,
+
+			// 验证结果保存
+			error_username: false,
+			error_password: false,
+			error_email: false,
+			error_image_code: false,
+
+			// 绑定数据
+			image_code_id: '',
+            image_code_url: '',
 			username: '',
 			password: '',
 			password2: '',
 			image_code: '',
+			email: '',
 			allow: '',
 
         },
@@ -23,11 +52,13 @@ window.onload = function () {
         methods: {
         	// 显示注册框
             show_reg: function () {
+            	this.show_message = false;
                 this.login_show = false;
                 this.register_show = true;
             },
 			// 显示登录框
 			show_log: function () {
+            	this.show_message = false;
 				this.login_show = true;
 				this.register_show = false;
             },
@@ -49,28 +80,119 @@ window.onload = function () {
 				this.image_code_id = this.generate_uuid();
 				this.image_code_url = this.host + '/image_codes/' + this.image_code_id + '/';
             },
+			username_focus: function () {
+				this.show_error_username = false;
+				this.username_right = false;
+            },
+			check_username: function () {
+				var len = this.username.length;
+				if (len<5 || len>20){
+					this.username_error_message = '请输入5-20个字符的用户名 !';
+					this.show_error_username = true;
+
+				}else if (!/^[0-9a-zA-Z_]+$/.test(this.username)){
+					this.username_error_message = '用户名只能含数字、字母、下滑线 !';
+					this.show_error_username = true;
+
+				}else{
+					this.username_focus();
+					this.username_right = true;
+				}
+            },
+			password_focus: function () {
+				this.show_error_password = false;
+				this.password_right = false;
+            },
+			check_password: function () {
+            	var len = this.password.length
+				if (len<6 || len>20){
+            		this.password_error_message = '请输入6-20位的密码 ！';
+					this.show_error_password = true;
+				}else{
+            		this.password_focus();
+            		this.password_right = true;
+				}
+            },
+			password2_focus: function () {
+				this.show_error_password2 = false;
+				this.password2_right = false;
+            },
+			check_password2: function () {
+				var len = this.password2.length;
+				if (len<6 || len>20){
+					this.password2_error_message = '请输入6-20位的密码 ！';
+					this.show_error_password2 = true
+				}else if (this.password2 != this.password){
+					this.password2_error_message = '两次输入的密码不一致 !';
+					this.show_error_password2 = true;
+				}else{
+					this.password2_focus();
+					this.password2_right = true
+				}
+            },
+			email_focus: function () {
+				this.show_error_email = false;
+				this.email_right = false;
+            },
+			check_email: function () {
+            	if (!/^(?:[a-zA-Z0-9]+[_\-\+\.]?)*[a-zA-Z0-9]+@(?:([a-zA-Z0-9]+[_\-]?)*[a-zA-Z0-9]+\.)+([a-zA-Z]{2,})+$/.test(this.email)){
+            		this.email_error_message = '邮箱格式有误!';
+            		this.show_error_email = true;
+				}else{
+            		this.email_focus();
+            		this.email_right = true;
+				}
+            },
+			check_allow: function () {
+				if (!this.allow){
+					this.show_error_allow = true;
+				}else{
+					this.show_error_allow = false;
+				}
+            },
+			check_image_code: function () {
+				if (!this.image_code){
+					this.image_code_error_message = '请填写验证码!';
+					this.show_error_image_code = true;
+				}else{
+					this.show_error_image_code = false;
+				}
+            },
+
 			// 用户注册
 			register_user: function () {
-				axios.post(this.host + '/users/', {
-					username:'',
-					password:'',
-					password2: '',
-					image_code: '',
-					image_code_id: '',
-					allow: this.allow.toString()
+            	this.check_username();
+            	this.check_password();
+            	this.check_password2();
+            	this.check_email();
+            	this.check_allow();
+            	this.check_image_code();
+
+            	if (this.show_error_username==false && this.show_error_password==false && this.show_error_password2==false &&
+				this.error_email==false && this.show_error_allow==false && this.show_error_image_code==false){
+            		axios.post(this.host + '/users/', {
+					username: this.username,
+					password: this.password,
+					password2: this.password2,
+					image_code: this.image_code,
+					image_code_id: this.image_code_id,
+					email: this.email,
+					allow: this.allow,
 				},{
 					responseType: 'json',
 				})
 					.then(response => {
-						alert('注册成功')
+						alert('注册成功');
 						alert(response.data)
 
 					})
 					.catch(error => {
-						alert('失败')
-
+						alert(error.data)
 					})
+				}
+
             },
+
 			
         }
     })

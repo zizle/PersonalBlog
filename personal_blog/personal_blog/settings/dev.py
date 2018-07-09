@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 添加支持跨域请求
+    'corsheaders',
     # 添加rest_framework
     'rest_framework',
 
@@ -51,6 +53,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # 处理跨域请求
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -218,3 +222,11 @@ REST_FRAMEWORK = {
 
 # 将定义的user模型类用于django认证系统
 AUTH_USER_MODEL = "users.User"
+
+# 指明跨域请求的白名单
+CORS_ORIGIN_WHITELIST = (
+    '127.0.0.1:8080',
+    'localhost:8080',
+)
+# 允许前端携带cookie
+CORS_ALLOW_CREDENTIALS = True

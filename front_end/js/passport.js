@@ -4,6 +4,10 @@ window.onload = function () {
         data: {
             host,
 			// 显示错误信息
+			show_login_username_error: false,
+			show_login_password_error: false,
+			show_login_image_code_error: false,
+
 			show_error_username:false,
 			show_error_password: false,
 			show_error_passeword2: false,
@@ -12,6 +16,10 @@ window.onload = function () {
 			show_error_image_code: false,
 
 			// 错误信息内容
+			login_username_error_message: '',
+			login_password_error_message: '',
+			login_image_code_error_message: '',
+
 			username_error_message: '',
 			password_error_message: '',
 			password2_error_message: '',
@@ -23,6 +31,8 @@ window.onload = function () {
 			register_show: false,
 
 			// 显示对勾
+			login_username_right: false,
+			login_password_right: false,
 			username_right: false,
 			password_right: false,
 			password2_right: false,
@@ -34,7 +44,12 @@ window.onload = function () {
 			error_email: false,
 			error_image_code: false,
 
-			// 绑定数据
+			// 绑定登录数据
+			login_username: '',
+			login_password: '',
+			login_image_code: '',
+
+			// 绑定注册数据
 			image_code_id: '',
             image_code_url: '',
 			username: '',
@@ -42,7 +57,7 @@ window.onload = function () {
 			password2: '',
 			image_code: '',
 			email: '',
-			allow: '',
+			allow: true,
 
         },
         mounted: function () {
@@ -80,6 +95,50 @@ window.onload = function () {
 				this.image_code_id = this.generate_uuid();
 				this.image_code_url = this.host + '/image_codes/' + this.image_code_id + '/';
             },
+			login_username_focus: function () {
+            	this.login_username_right = false;
+            	this.show_login_username_error = false;
+
+            },
+			// 登录检验
+			check_login_username: function () {
+            	var len = this.login_username.length;
+            	if (len<5 || len>20){
+            		this.login_username_error_message = '用户名为5-20个字符 ！';
+            		this.show_login_username_error = true;
+				}else if(!/^[0-9a-zA-Z_]+$/.test(this.login_username)){
+            		this.login_username_error_message = '用户名输入有误!'
+				} else{
+            		this.login_username_focus();
+            		this.login_username_right = true;
+				}
+            },
+			login_password_focus: function () {
+				this.show_login_password_error = false;
+				this.login_password_right = false;
+            },
+			check_login_password: function () {
+            	var len = this.login_password.length;
+            	if (len<6 || len>20){
+            		this.login_password_error_message = '请输入6-20位的密码 ！';
+					this.show_login_password_error = true;
+				}else{
+            		this.login_password_focus();
+            		this.login_password_right = true;
+				}
+            },
+			login_image_code_focus: function () {
+				this.show_login_image_code_error = false;
+            },
+			check_login_image_code: function () {
+				if (!this.login_image_code){
+					this.login_image_code_error_message = '请填写验证码!';
+					this.show_login_image_code_error = true;
+				}else{
+					this.login_image_code_focus();
+				}
+            },
+			// 注册检验
 			username_focus: function () {
 				this.show_error_username = false;
 				this.username_right = false;
@@ -150,15 +209,30 @@ window.onload = function () {
 					this.show_error_allow = false;
 				}
             },
+			image_code_focus: function () {
+				this.show_error_image_code = false;
+            },
 			check_image_code: function () {
 				if (!this.image_code){
 					this.image_code_error_message = '请填写验证码!';
 					this.show_error_image_code = true;
 				}else{
-					this.show_error_image_code = false;
+					this.image_code_focus();
 				}
             },
 
+			// 用户登录
+			user_login: function () {
+            	this.check_login_username();
+            	this.check_login_password();
+            	this.check_login_image_code();
+            	if (this.show_login_username_error==false && this.show_login_password_error==false && this.show_login_image_code_error==false){
+            		axios.post()
+				}
+
+
+
+            },
 			// 用户注册
 			register_user: function () {
             	this.check_username();
@@ -192,8 +266,6 @@ window.onload = function () {
 				}
 
             },
-
-			
         }
     })
 

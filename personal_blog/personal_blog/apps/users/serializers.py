@@ -4,7 +4,7 @@ from django_redis import get_redis_connection
 import re
 
 
-from users.models import User
+from .models import User
 from .utils import generate_jwt_token
 
 

@@ -10,7 +10,7 @@ window.onload = function () {
 
 			show_error_username:false,
 			show_error_password: false,
-			show_error_passeword2: false,
+			show_error_password2: false,
 			show_error_email: false,
 			show_error_allow: false,
 			show_error_image_code: false,
@@ -18,7 +18,7 @@ window.onload = function () {
 			// 错误信息内容
 			login_username_error_message: '',
 			login_password_error_message: '',
-			login_image_code_error_message: '',
+			// login_image_code_error_message: '',
 
 			username_error_message: '',
 			password_error_message: '',
@@ -41,13 +41,16 @@ window.onload = function () {
 			// 验证结果保存
 			error_username: false,
 			error_password: false,
+			error_password2: false,
 			error_email: false,
+			error_allow: false,
 			error_image_code: false,
 
 			// 绑定登录数据
 			login_username: '',
 			login_password: '',
-			login_image_code: '',
+			// login_image_code: '',
+			remember_user: false,
 
 			// 绑定注册数据
 			image_code_id: '',
@@ -67,16 +70,25 @@ window.onload = function () {
         methods: {
         	// 显示注册框
             show_reg: function () {
-            	this.show_message = false;
+
                 this.login_show = false;
                 this.register_show = true;
             },
 			// 显示登录框
 			show_log: function () {
-            	this.show_message = false;
+
 				this.login_show = true;
 				this.register_show = false;
             },
+			// 获取url路径参数
+			get_query_string: function(name){
+				var reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+				var r = window.location.search.substr(1).match(reg);
+				if (r != null) {
+					return decodeURI(r[2]);
+				}
+				return null;
+			},
 			// 生成图片验证码的uuid
 			generate_uuid: function () {
 				var d = new Date().getTime();
@@ -142,31 +154,54 @@ window.onload = function () {
 			username_focus: function () {
 				this.show_error_username = false;
 				this.username_right = false;
+				this.error_username = false;
             },
 			check_username: function () {
 				var len = this.username.length;
 				if (len<5 || len>20){
 					this.username_error_message = '请输入5-20个字符的用户名 !';
 					this.show_error_username = true;
+					this.error_username = true;
 
 				}else if (!/^[0-9a-zA-Z_]+$/.test(this.username)){
 					this.username_error_message = '用户名只能含数字、字母、下滑线 !';
 					this.show_error_username = true;
+					this.error_username = true;
 
 				}else{
 					this.username_focus();
 					this.username_right = true;
 				}
+				// 检查重名
+				if (this.error_username == false){
+					// 向后台发送请求
+					axios.get(this.host + '/usernames/' + this.username + '/count/',{
+						responseType: "Json"
+					})
+					.then(response => {
+						if(response.data.count > 0){
+							this.username_error_message = '用户名已存在 ！';
+							this.username_right = false;
+							this.show_error_username = true;
+							this.error_usernam = true;
+						}else{
+							this.username_focus();
+							this.username_right = true;
+						}
+					})
+                }
             },
 			password_focus: function () {
 				this.show_error_password = false;
 				this.password_right = false;
+				this.error_password = false;
             },
 			check_password: function () {
             	var len = this.password.length
 				if (len<6 || len>20){
             		this.password_error_message = '请输入6-20位的密码 ！';
 					this.show_error_password = true;
+					this.error_password = true;
 				}else{
             		this.password_focus();
             		this.password_right = true;
@@ -175,28 +210,33 @@ window.onload = function () {
 			password2_focus: function () {
 				this.show_error_password2 = false;
 				this.password2_right = false;
+				this.error_password2 = false;
             },
 			check_password2: function () {
 				var len = this.password2.length;
 				if (len<6 || len>20){
 					this.password2_error_message = '请输入6-20位的密码 ！';
-					this.show_error_password2 = true
+					this.show_error_password2 = true;
+					this.error_password2 = true;
 				}else if (this.password2 != this.password){
 					this.password2_error_message = '两次输入的密码不一致 !';
 					this.show_error_password2 = true;
+					this.error_password2 = true;
 				}else{
 					this.password2_focus();
-					this.password2_right = true
+					this.password2_right = true;
 				}
             },
 			email_focus: function () {
 				this.show_error_email = false;
 				this.email_right = false;
+				this.error_email = false;
             },
 			check_email: function () {
             	if (!/^(?:[a-zA-Z0-9]+[_\-\+\.]?)*[a-zA-Z0-9]+@(?:([a-zA-Z0-9]+[_\-]?)*[a-zA-Z0-9]+\.)+([a-zA-Z]{2,})+$/.test(this.email)){
             		this.email_error_message = '邮箱格式有误!';
             		this.show_error_email = true;
+            		this.error_email = true;
 				}else{
             		this.email_focus();
             		this.email_right = true;
@@ -205,17 +245,21 @@ window.onload = function () {
 			check_allow: function () {
 				if (!this.allow){
 					this.show_error_allow = true;
+					this.error_allow = true;
 				}else{
 					this.show_error_allow = false;
+					this.error_allow =false;
 				}
             },
 			image_code_focus: function () {
 				this.show_error_image_code = false;
+				this.error_image_code = false;
             },
 			check_image_code: function () {
 				if (!this.image_code){
 					this.image_code_error_message = '请填写验证码!';
 					this.show_error_image_code = true;
+					this.error_image_code = true;
 				}else{
 					this.image_code_focus();
 				}
@@ -227,7 +271,39 @@ window.onload = function () {
             	this.check_login_password();
             	this.check_login_image_code();
             	if (this.show_login_username_error==false && this.show_login_password_error==false && this.show_login_image_code_error==false){
-            		axios.post()
+            		axios.post(this.host + '/authorizations/',{
+            			username: this.login_username,
+						password: this.login_password
+					}, {
+            			responseType: 'Json',
+						withCredentials: true,
+					})
+					.then(response=>{
+						// 如果用户有记住登录要保存登录信息
+						if (this.remember_user){
+							sessionStorage.clear();
+							localStorage.token = response.data.token;
+							localStorage.user_id = response.data.user_id;
+							localStorage.username = response.data.username;
+							localStorage.password = this.login_password;
+						}else{
+							sessionStorage.clear();
+						}
+						// 登录成功跳转页面
+						var return_url = this.get_query_string('next');
+						if (!return_url){
+							return_url = '/home.html';
+						}
+						location.href = return_url;
+					})
+					.catch(error => {
+						if (error.response.status == 400){
+							this.login_password_error_message = '用户名或密码有误 ！';
+						}else{
+							this.login_password_error_message = '服务器错误，请重试 ！';
+						}
+						this.show_login_password_error = true;
+					})
 				}
 
 
@@ -242,33 +318,45 @@ window.onload = function () {
             	this.check_allow();
             	this.check_image_code();
 
-            	if (this.show_error_username==false && this.show_error_password==false && this.show_error_password2==false &&
-				this.error_email==false && this.show_error_allow==false && this.show_error_image_code==false){
-            		axios.post(this.host + '/users/', {
-					username: this.username,
-					password: this.password,
-					password2: this.password2,
-					image_code: this.image_code,
-					image_code_id: this.image_code_id,
-					email: this.email,
-					allow: this.allow,
-				},{
+            	if (this.error_username==false && this.error_password==false && this.error_password2==false &&
+					this.error_email==false && this.error_allow==false && this.error_image_code==false){
+					axios.post(this.host + '/users/', {
+						username: this.username,
+						password: this.password,
+						password2: this.password2,
+						image_code: this.image_code,
+						image_code_id: this.image_code_id,
+						email: this.email,
+						allow: this.allow,
+					},{
 					responseType: 'json',
-				})
+					})
 					.then(response => {
+						// 记录用户的登录状态
+						sessionStorage.clear();
+						localStorage.clear();
+						localStorage.token = response.data.token;
+						localStorage.username = response.data.username;
+						localStorage.user_id = response.data.user_id;
 						alert('注册成功');
-						alert(response.data)
-
+						location.href = '/home.html';
 					})
 					.catch(error => {
-						alert(error.data)
+						if (error.response.status == 400) {
+							if ('non_field_errors' in error.response.data) {
+								console.log(error.response.data);
+							} else {
+								console.log(error.response.data);
+							}
+						}else{
+							console.log(error.response.data);
+						}
+						alert('注册失败！')
 					})
 				}
-
             },
         }
     })
-
 }
 // //服务器校验
 // 	function severCheck(){

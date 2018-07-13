@@ -269,8 +269,8 @@ window.onload = function () {
 			user_login: function () {
             	this.check_login_username();
             	this.check_login_password();
-            	this.check_login_image_code();
-            	if (this.show_login_username_error==false && this.show_login_password_error==false && this.show_login_image_code_error==false){
+
+            	if (this.show_login_username_error==false && this.show_login_password_error==false){
             		axios.post(this.host + '/authorizations/',{
             			username: this.login_username,
 						password: this.login_password

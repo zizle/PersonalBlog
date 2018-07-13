@@ -1003,7 +1003,7 @@ body{
 }
 
 .base_info,.pic_info,.type_info,.pass_info,.my_collect,.release_form,.news_list{
-    width:700px;
+    width:85%;
     margin:0px auto;
 }
 
@@ -1048,7 +1048,7 @@ body{
 .form-group label{
     width:120px;
     line-height:40px;
-    font-size:14px;
+    font-size:16px;
     font-weight:bold;
     color:#000;
     text-align:right;
@@ -1248,13 +1248,13 @@ body{
 }
 
 .release_form .form-group{
-    width:700px;
+    width:82%;
     overflow:hidden;
     margin:15px auto;
 }
 
 .form-group .input_txt2{
-    width:570px;
+    width:80%;
 }
 
 .form-group .sel_opt{
@@ -1269,7 +1269,7 @@ body{
 }
 
 .form-group .input_multxt{
-    width:550px;
+    width:78%;
     height:60px;
     padding:10px;
     float:left;
@@ -1293,7 +1293,13 @@ body{
 
 .form-group .input_sub2{
     width:100px;
-    margin:10px 0 0 127px;
+    float: right;
+    /*margin:10px 0 50px 127px;*/
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+.form-group .input_sub2:hover{
+    background: red;
 }
 
 .other_con{

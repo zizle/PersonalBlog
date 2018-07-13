@@ -1258,10 +1258,11 @@ body{
 }
 
 .form-group .sel_opt{
-    width:150px;
+    width:120px;
     height:30px;
     float:left;
     margin-top:5px;
+    margin-right: 15px;
     border:1px solid #ddd;
     border-radius:4px;
     outline:none;

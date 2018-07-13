@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     # 添加rest_framework
     'rest_framework',
     # 注册有关xadmin的应用
-
+    'xadmin',
+    'crispy_forms',
+    'reversion',
 
     # 安装验证模块应用
     'verifications.apps.VerficationsConfig',

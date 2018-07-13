@@ -46,11 +46,15 @@ INSTALLED_APPS = [
     'corsheaders',
     # 添加rest_framework
     'rest_framework',
+    # 注册有关xadmin的应用
+
 
     # 安装验证模块应用
     'verifications.apps.VerficationsConfig',
     # 安装用户模块
     'users.apps.UsersConfig',
+    # 安装文章应用
+    'articles.apps.ArticlesConfig',
 ]
 
 MIDDLEWARE = [

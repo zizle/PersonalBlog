@@ -7,7 +7,7 @@ tinymce.init({
     language:'zh_CN',
     //高度为400
     height:400,
-    width:810,
+    width:855,
     //工具栏上面的补丁按钮
     plugins: [
             'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',

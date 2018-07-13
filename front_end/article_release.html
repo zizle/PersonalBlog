@@ -12,7 +12,10 @@
     <script type="text/javascript" src="js/jquery.form.min.js"></script>
     <script src="plugin/tinymce/js/tinymce/tinymce.min.js"></script>
     <script src="js/tinymce_setup.js"></script>
-    <script type="text/javascript" src="js/user_news_release.js"></script>
+    <script src="js/host.js"></script>
+    <script src="js/vue-2.5.16.js"></script>
+    <script src="js/axios-0.18.0.min.js"></script>
+
 </head>
 <body>
 <div class="navbar">
@@ -22,26 +25,20 @@
     </ul>
     <div class="user_info">
         <img src="img/user_pic.png" alt="头像">
-        <span>用户:zhangsan</span>
+        <span>用户:zha张安ngsan</span>
     </div>
 </div>
+<div class="inframe_body" id="app">
     <form class="release_form">
-<div class="inframe_body">
-
-
         <h3>个人文章发布</h3>
         <div class="form-group"><label>*文章标题：</label><input type="text" class="input_txt2" name="title"></div>
         <div class="form-group">
             <label>*文章分类：</label>
-            <select class="sel_opt" name="category_id">
-                <option value="">知识学习<option>
-                <option value="">分类二</option>
-                <option value="">分类三</option>
+            <select class="sel_opt" v-model="stair_category_id">
+                <option v-for="stair_category in stair_categories" v-bind:value="stair_category.id">{{ stair_category.name }}</option>
             </select>
             <select class="sel_opt" name="category_id">
-                <option value="">Python</option>
-                <option value="">分类二</option>
-                <option value="">分类一</option>
+                <option v-for="foxbase_category in foxbase_categories" v-bind:value="foxbase_category.id">{{ foxbase_category.name }}</option>
             </select>
         </div>
         <div class="form-group"><label>摘要：</label><textarea class="input_multxt" name="digest"></textarea></div>
@@ -76,6 +73,7 @@
     </div>
 
 </body>
+<script type="text/javascript" src="js/article_release.js"></script>
 <script src="js/backstretch.min.js"></script>
 <script type="text/javascript">
 $.backstretch('img/400.jpg');

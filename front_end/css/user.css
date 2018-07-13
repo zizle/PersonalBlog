@@ -1003,7 +1003,7 @@ body{
 }
 
 .base_info,.pic_info,.type_info,.pass_info,.my_collect,.release_form,.news_list{
-    width:85%;
+    width:100%;
     margin:0px auto;
 }
 
@@ -1254,7 +1254,7 @@ body{
 }
 
 .form-group .input_txt2{
-    width:80%;
+    width:85%;
 }
 
 .form-group .sel_opt{
@@ -1270,7 +1270,7 @@ body{
 }
 
 .form-group .input_multxt{
-    width:78%;
+    width:83%;
     height:60px;
     padding:10px;
     float:left;

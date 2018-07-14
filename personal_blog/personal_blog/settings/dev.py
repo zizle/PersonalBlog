@@ -57,6 +57,9 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     # 安装文章应用
     'articles.apps.ArticlesConfig',
+    # 安装评论应用
+    'comments.apps.CommentsConfig',
+
 ]
 
 MIDDLEWARE = [

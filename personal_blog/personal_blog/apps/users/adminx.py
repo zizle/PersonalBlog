@@ -2,8 +2,6 @@
 import xadmin
 from xadmin import views
 
-from . import models
-
 
 class BaseSetting(object):
     """xadmin的基本配置"""

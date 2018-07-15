@@ -2,7 +2,6 @@ from django.db import models
 from personal_blog.utils.models import BaseModel
 
 from users.models import User
-from comments.models import Comment
 
 
 class ArticleCategory(models.Model):
@@ -23,13 +22,13 @@ class Article(BaseModel):
     """文章表"""
     category = models.ForeignKey(ArticleCategory, on_delete=models.PROTECT, verbose_name='分类')
     author = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='作者')
-    comment = models.ForeignKey(Comment, related_name='article', on_delete=models.DO_NOTHING, verbose_name='评论')
     title = models.CharField(max_length=100, blank=False, verbose_name='标题')
-    summary = models.CharField(max_length=256, verbose_name='摘要')
+    summary = models.CharField(null=True, blank=True, max_length=256, verbose_name='摘要')
     content = models.TextField(blank=False, verbose_name='文章内容')
-    clicks = models.IntegerField(verbose_name='点击量')
+    clicks_count = models.IntegerField(default=0, verbose_name='点击量')
+    comments_count = models.IntegerField(default=0, verbose_name='评论量')
     img_url = models.CharField(max_length=200, default='', null=True, blank=True, verbose_name='图片地址')
-    title_image = models.ImageField(verbose_name='标题图片')
+    title_image = models.ImageField(null=True, blank=True, verbose_name='标题图片')
 
     class Meta:
         db_table = 'tb_articles'

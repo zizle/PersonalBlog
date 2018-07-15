@@ -10,17 +10,22 @@
 
 	<script src="plugin/jquery.min.js"></script>
 	<script src="plugin/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/vue-2.5.16.js"></script>
+	<script src="js/axios-0.18.0.min.js"></script>
+	<script src="js/host.js"></script>
+	<script src="js/home.js"></script>
 	<!--背景轮播-->
 	<script src="js/backstretch.min.js"></script>
 	<!--日历-->
 </head>
 <body>
+
 	<!--网页主体-->
 	<div class="container">
 
 		<!--导航菜单栏-->
-		<div class="navigation_menu">
-		<ul class="menu">
+		<div class="navigation_menu" id="navapp">
+			<ul class="menu">
 			<li><a href="#">首页</a>
 			<ul class="submenu">
 					<li><a href="home.html">首页</a></li>
@@ -28,19 +33,14 @@
 
 				</ul>
 			</li>
-			<li><a href="#">知识学习</a>
+			<li><a href="#" @click="click_knowledge_learn">知识学习</a>
 				<ul class="submenu">
-					<li><a href="#">Python</a></li>
-					<li><a href="#">JavaScript</a></li>
-					<li><a href="#">CSS</a></li>
-
+					<li v-for="sub_category in knowledge_category"><a href="#">{{ sub_category.name }}</a></li>
 				</ul>
 			</li>
 			<li class="active"><a href="#">技术文章</a>
 				<ul class="submenu">
-					<li><a href="#">Mac OS</a></li>
-					<li><a href="#">Windows</a></li>
-					<li><a href="#">Linux</a></li>
+					<li v-for="sub_category in skill_article_category"><a href="#">{{ sub_category.name }}</a></li>
 				</ul>
 			</li>
 			<li class="active"><a href="#">便签墙</a>
@@ -67,13 +67,13 @@
 				</ul>
 			</li>
 		</ul>
-	</div>
+		</div>
 
 		<!--主体框-->
 		<div class="row w_main_row">
 			<!--左侧-->
-			<div class="fl w_main_left">
-					<div class="panel panel-default contenttop">
+			<div class="fl w_main_left" id="leftapp">
+					<div class="panel panel-default contenttop" v-show="show_blogger_top">
 						<a href="article_detail.html">
 							<strong>博主置顶</strong>
 							<h3 class="title">我的个人博客之——阿里云空间选择</h3>
@@ -83,8 +83,7 @@
 
 					<div class="article_category">
 						<ul>
-							<li>知识学习</li>
-							<li>Python</li>
+							<li v-for="category in show_article_category">{{ category }}</li>
 						</ul>
 					</div>
 
@@ -436,11 +435,8 @@
 
 					</div>
 				</div>
+			</div>
 
-
-
-
-				</div>
 
 			<!--右边-->
 			<div class="fr w_main_right">
@@ -607,6 +603,7 @@
         <p>电话：010-****888    京ICP备*******8号</p>
     </div>
 </body>
+
 <script type="text/javascript">
 	// 日历功能与样式
 	(function() {
@@ -1098,4 +1095,5 @@
 		duration : 2000 // 切换延时
 	});
 </script>
+
 </html>

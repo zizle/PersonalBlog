@@ -3,13 +3,28 @@ window.onload = function () {
     var left = new Vue({
         el: '#leftapp',
         data: {
+            host,
             show_blogger_top: true,
             show_article_category: [],
+            uptodate_articles: [],
         },
         mounted: function () {
-          this.show_article_category = ['最新']
+          this.show_article_category = ['最新'];
+          this.get_articles();
         },
-        method: {
+        methods: {
+            get_articles: function () {
+            axios.get(this.host + '/articles/', {
+                responseType: 'Json'
+            })
+                .then(response => {
+                    this.uptodate_articles = response.data
+                })
+                .catch(error => {
+                    this.uptodate_articles = [];
+                    console.log(error.response.data)
+                })
+            },
 
         },
     });
@@ -20,16 +35,16 @@ window.onload = function () {
         knowledge_category: [],
         skill_article_category: [],
 
+
     },
     mounted: function () {
         this.get_knowledge_category();
         this.get_skill_article_category();
 
+
     },
     methods: {
-        get_articles: function () {
-            axios.get(this.host + '/articles/')
-        },
+
         get_knowledge_category: function () {
             axios.get(this.host + '/categories/1/', {
             responseType: 'Json'

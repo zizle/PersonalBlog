@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.generics import ListAPIView
 
 from . import serializers
-from .models import ArticleCategory
+from .models import ArticleCategory, Article
 
 
 # Create your views here.
@@ -19,3 +20,10 @@ class CategoriesViewSet(ReadOnlyModelViewSet):
             return serializers.CategorySerializer
         else:
             return serializers.SubCategorySerializer
+
+
+class HomeArticlesView(ListAPIView):
+    """首页文章接口视图"""
+    queryset = Article.objects.all().order_by('update_time')
+    serializer_class = serializers.HomeArticleSerializer
+

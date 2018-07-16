@@ -27,6 +27,9 @@ window.onload = function () {
 
     },
     methods: {
+        get_articles: function () {
+            axios.get(this.host + '/articles/')
+        },
         get_knowledge_category: function () {
             axios.get(this.host + '/categories/1/', {
             responseType: 'Json'

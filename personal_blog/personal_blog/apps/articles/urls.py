@@ -1,11 +1,14 @@
 # _*_ coding:utf-8 _*_
 
 from rest_framework.routers import DefaultRouter
+from django.conf.urls import url
 
 from . import views
 
 
-urlpatterns = []
+urlpatterns = [
+    url(r'^articles/$', views.HomeArticlesView.as_view())
+]
 
 
 router = DefaultRouter()

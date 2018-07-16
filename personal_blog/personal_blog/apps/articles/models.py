@@ -29,6 +29,7 @@ class Article(BaseModel):
     comments_count = models.IntegerField(default=0, verbose_name='评论量')
     img_url = models.CharField(max_length=200, default='', null=True, blank=True, verbose_name='图片地址')
     title_image = models.ImageField(null=True, blank=True, verbose_name='标题图片')
+    is_top = models.BooleanField(default=False, verbose_name='置顶')
 
     class Meta:
         db_table = 'tb_articles'

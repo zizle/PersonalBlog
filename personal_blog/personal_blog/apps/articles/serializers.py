@@ -3,6 +3,7 @@
 from rest_framework import serializers
 
 from .models import ArticleCategory, Article
+from users.models import User
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -21,8 +22,22 @@ class SubCategorySerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'subs')
 
 
+class ArticleAuthorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', "username")
+
+
 class HomeArticleSerializer(serializers.ModelSerializer):
     """文章序列化器"""
+    category = CategorySerializer()
+    author = ArticleAuthorSerializer()
+
     class Meta:
         model = Article
         fields = ('id', 'category', 'author', 'title', 'summary', 'clicks_count', 'comments_count', 'update_time')
+        extra_kwargs = {
+            "update_time": {
+
+            }
+        }

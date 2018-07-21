@@ -24,6 +24,6 @@ class CategoriesViewSet(ReadOnlyModelViewSet):
 
 class HomeArticlesView(ListAPIView):
     """首页文章接口视图"""
-    queryset = Article.objects.all().order_by('update_time')
+    queryset = Article.objects.all().order_by('-update_time')
     serializer_class = serializers.HomeArticleSerializer
 

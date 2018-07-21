@@ -145,9 +145,9 @@ TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = True  # 特别格式化当地时间
 
-USE_TZ = True
+USE_TZ = False  # 不特别处理时区
 
 
 # Static files (CSS, JavaScript, Images)

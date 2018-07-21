@@ -92,175 +92,26 @@
 
 						<!--文章列表开始-->
 						<div class="contentList">
-							<!--<div class="panel panel-default" >-->
-								<!--<div class="panel-body">-->
-									<!--<h4><a class="title" href="article_detail.html">，，，，</a></h4>-->
-									<!--<p>-->
-										<!--<a class="label label-default">{{ article.category }}</a>-->
-										<!--&lt;!&ndash;<a class="label label-default">java</a>&ndash;&gt;-->
-									<!--</p>-->
-									<!--<p class="overView">{{ article.summary}}</p>-->
-									<!--<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">{{ article.user }}</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:{{ article.clicks_count }}</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:{{ article.comments_count }}</span><span class="count"><i class="glyphicon glyphicon-time"></i>{{ article.update_time }}</span></p>-->
-
-								<!--</div>-->
-							<!--</div>-->
-
-
-
 							<div class="panel panel-default" v-for="article in uptodate_articles">
 								<div class="panel-body">
 									<div class="contentleft">
 										<h4><a class="title" href="article_detail.html">{{ article.title }}</a></h4>
 										<p>
-											<a class="label label-default">{{ article.category.name }}</a>
+											<a class="label label-default">{{ article.category }}</a>
 											<!--<a class="label label-default">tomcat负载均衡</a>-->
 										</p>
 										<p class="overView">{{ article.summary }}</p>
-										<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">{{ article.author }}</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:{{ article.clicks_count }}</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:{{ article.comments_count }}</span><span class="count"><i class="glyphicon glyphicon-time"></i>{{ article.update_time }}</span></p>
+										<p><span class="count" v-if="article.author"><i class="glyphicon glyphicon-user"></i><a href="#">{{ article.author }}</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:{{ article.clicks_count }}</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:{{ article.comments_count }}</span><span class="count"><i class="glyphicon glyphicon-time"></i>{{ article.update_time }}</span></p>
 									</div>
 									<div class="contentImage">
-										<div class="row">
-											<a href="#" class="thumbnail w_thumbnail">
-												<img src="img/slider/Aj6bieY.jpg" alt="...">
+										<div class="row" v-if="article.img_url">
+											<a href="" class="thumbnail w_thumbnail">
+												<img v-bind:src="article.img_url" alt="...">
 											</a>
 										</div>
 									</div>
 								</div>
 							</div>
-
-
-							<div class="panel panel-default">
-								<div class="panel-body">
-
-									<h4><a class="title" href="article_detail.html">wfyvv.com</a></h4>
-									<p>
-										<a class="label label-default">UUID</a>
-										<a class="label label-default">java</a>
-									</p>
-									<p class="overView">个人网站正在建设中。。。</p>
-									<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:666</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:18</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-02-07</span></p>
-
-								</div>
-							</div>
-							<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="contentleft">
-											<h4><a class="title" href="article_detail.html">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></h4>
-											<p>
-												<a class="label label-default">Nginx</a>
-												<a class="label label-default">tomcat负载均衡</a>
-											</p>
-											<p class="overView">1.web服务器负载均衡简介web服务器负载均衡是指将多台可用单节点服务器组合成web服务器集群，然后通过负载均衡器将客户端请求均匀的转发到不同的单节点web服务器上，从而增加整个web服务器集群的吞吐量。</p>
-											<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:1003</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:2</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-01-16</span></p>
-										</div>
-										<div class="contentImage">
-											<div class="row">
-												<a href="#" class="thumbnail w_thumbnail">
-													<img src="img/slider/Aj6bieY.jpg" alt="...">
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							<div class="panel panel-default">
-								<div class="panel-body">
-
-									<h4><a class="title" href="article_detail.html">wfyvv.com</a></h4>
-									<p>
-										<a class="label label-default">UUID</a>
-										<a class="label label-default">java</a>
-									</p>
-									<p class="overView">个人网站正在建设中。。。</p>
-									<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:666</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:18</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-02-07</span></p>
-
-								</div>
-							</div>
-							<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="contentleft">
-											<h4><a class="title" href="article_detail.html">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></h4>
-											<p>
-												<a class="label label-default">Nginx</a>
-												<a class="label label-default">tomcat负载均衡</a>
-											</p>
-											<p class="overView">1.web服务器负载均衡简介web服务器负载均衡是指将多台可用单节点服务器组合成web服务器集群，然后通过负载均衡器将客户端请求均匀的转发到不同的单节点web服务器上，从而增加整个web服务器集群的吞吐量。</p>
-											<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:1003</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:2</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-01-16</span></p>
-										</div>
-										<div class="contentImage">
-											<div class="row">
-												<a href="#" class="thumbnail w_thumbnail">
-													<img src="img/slider/Aj6bieY.jpg" alt="...">
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							<div class="panel panel-default">
-								<div class="panel-body">
-
-									<h4><a class="title" href="article_detail.html">wfyvv.com</a></h4>
-									<p>
-										<a class="label label-default">UUID</a>
-										<a class="label label-default">java</a>
-									</p>
-									<p class="overView">个人网站正在建设中。。。</p>
-									<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:666</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:18</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-02-07</span></p>
-
-								</div>
-							</div>
-							<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="contentleft">
-											<h4><a class="title" href="article_detail.html">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></h4>
-											<p>
-												<a class="label label-default">Nginx</a>
-												<a class="label label-default">tomcat负载均衡</a>
-											</p>
-											<p class="overView">1.web服务器负载均衡简介web服务器负载均衡是指将多台可用单节点服务器组合成web服务器集群，然后通过负载均衡器将客户端请求均匀的转发到不同的单节点web服务器上，从而增加整个web服务器集群的吞吐量。</p>
-											<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:1003</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:2</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-01-16</span></p>
-										</div>
-										<div class="contentImage">
-											<div class="row">
-												<a href="#" class="thumbnail w_thumbnail">
-													<img src="img/slider/Aj6bieY.jpg" alt="...">
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
-							<div class="panel panel-default">
-								<div class="panel-body">
-
-									<h4><a class="title" href="article_detail.html">wfyvv.com</a></h4>
-									<p>
-										<a class="label label-default">UUID</a>
-										<a class="label label-default">java</a>
-									</p>
-									<p class="overView">个人网站正在建设中。。。</p>
-									<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:666</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:18</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-02-07</span></p>
-
-								</div>
-							</div>
-							<div class="panel panel-default">
-									<div class="panel-body">
-										<div class="contentleft">
-											<h4><a class="title" href="article_detail.html">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></h4>
-											<p>
-												<a class="label label-default">Nginx</a>
-												<a class="label label-default">tomcat负载均衡</a>
-											</p>
-											<p class="overView">1.web服务器负载均衡简介web服务器负载均衡是指将多台可用单节点服务器组合成web服务器集群，然后通过负载均衡器将客户端请求均匀的转发到不同的单节点web服务器上，从而增加整个web服务器集群的吞吐量。</p>
-											<p><span class="count"><i class="glyphicon glyphicon-user"></i><a href="#">admin</a></span> <span class="count"><i class="glyphicon glyphicon-eye-open"></i>阅读:1003</span><span class="count"><i class="glyphicon glyphicon-comment"></i>评论:2</span><span class="count"><i class="glyphicon glyphicon-time"></i>2017-01-16</span></p>
-										</div>
-										<div class="contentImage">
-											<div class="row">
-												<a href="#" class="thumbnail w_thumbnail">
-													<img src="img/slider/Aj6bieY.jpg" alt="...">
-												</a>
-											</div>
-										</div>
-									</div>
-								</div>
 						</div>
 						<!--文章列表结束-->
 					</div>

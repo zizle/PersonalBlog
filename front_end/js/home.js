@@ -4,15 +4,29 @@ window.onload = function () {
         el: '#leftapp',
         data: {
             host,
-            show_blogger_top: true,
             show_article_category: [],
             uptodate_articles: [],
+            top_article: {},
         },
         mounted: function () {
           this.show_article_category = ['最新'];
           this.get_articles();
+          this.get_top_article();
         },
         methods: {
+            get_top_article: function () {
+                axios.get(this.host + '/article/top/',{
+                    responseType: 'Json'
+                })
+                    .then(response => {
+                        this.top_article = response.data
+                    })
+                    .catch(error => {
+                        this.top_article = [];
+                        console.log(error.response.data)
+                    })
+            },
+
             get_articles: function () {
             axios.get(this.host + '/articles/', {
                 responseType: 'Json'
@@ -34,17 +48,12 @@ window.onload = function () {
         host,
         knowledge_category: [],
         skill_article_category: [],
-
-
     },
     mounted: function () {
         this.get_knowledge_category();
         this.get_skill_article_category();
-
-
     },
     methods: {
-
         get_knowledge_category: function () {
             axios.get(this.host + '/categories/1/', {
             responseType: 'Json'
@@ -74,7 +83,6 @@ window.onload = function () {
             })
         },
         click_knowledge_learn: function () {
-            left.$data.show_blogger_top = false;
             left.$data.show_article_category = ['知识学习'];
         }
     },

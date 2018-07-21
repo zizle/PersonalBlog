@@ -79,7 +79,7 @@ ROOT_URLCONF = 'personal_blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -251,3 +251,6 @@ JWT_AUTH = {
 AUTHENTICATION_BACKENDS = [
     'users.utils.MoreAccountLogin',
 ]
+
+# 生成文章详情静态文件路径
+GENERATE_DETAIL_HTML_PATH = os.path.join(os.path.dirname(os.path.dirname(BASE_DIR)), 'front_end')

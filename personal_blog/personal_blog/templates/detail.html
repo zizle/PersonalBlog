@@ -123,16 +123,16 @@
 
 					<!--评论列表开始-->
 					<div class="comment_list_con">
-						<div class="comment_list">
+					{% for comment in comments %}
+					<div class="comment_list">
 					<div class="person_pic fl">
 						<img src="../img/pic_code.jpg" alt="用户图标">
 					</div>
-					<div class="user_name fl">用户张山</div>
+					<div class="user_name fl">{{ comment.user }}</div>
 					<div class="comment_text fl">
-						遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
-
+						{{ comment.content }}
 					<div class="comment_opt">
-						<div class="comment_time fl">2017-01-01 00:00:00</div>
+						<div class="comment_time fl">{{ comment.create_time }}</div>
 						<a href="javascript:;" class="comment_up has_comment_up fr">21111</a>
 						<a href="javascript:;" class="comment_reply fr">回复</a>
 					</div>
@@ -145,15 +145,16 @@
 							<input type="submit" name="" value="回复">
 						</div>
 					</from>
-
+					{% for sub_comment in comment.subs %}
 					<div class="reply_text_con fl">
-						<div class="user_name2">用户李思回复@<a href="">用户张三</a></div>
+						<div class="user_name2">用户{{ sub_comment.user }}回复@<a href="">{% if sub_comment.parent %}{{ sub_comment.parent.user }}{% else %}{{ comment.user }}{% endif %}</a></div>
 						<div class="reply_text">
-							遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。
+							{{ sub_comment.content }}
+							<!--遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。-->
 
 						</div>
 						<div class="comment_opt">
-						<div class="comment_time fl">2017-01-01 00:00:00</div>
+						<div class="comment_time fl">{{ sub_comment.create_time }}</div>
 							<a href="javascript:;" class="comment_up fr">赞</a>
 							<a href="javascript:;" class="comment_reply fr">回复</a>
 						</div>
@@ -163,14 +164,14 @@
 							<div class="reply_btn fr">
 								<input type="reset" name="" value="取消">
 								<input type="submit" name="" value="回复">
-
-						</div>
-							</from>
+							</div>
+						</from>
 					</div>
-
+					{% endfor %}
 				</div>
-
-						<div class="comment_list">
+						<hr>
+					{% endfor %}
+					<div class="comment_list">
 					<div class="person_pic fl">
 						<img src="../img/pic_code.jpg" alt="用户图标">
 					</div>

@@ -6,7 +6,7 @@ from django.conf import settings
 import os
 
 from articles.models import Article, ArticleCategory
-from comments.models import Comment
+from comments.models import Comment, SubComment
 
 
 @celery_app.task(name='generate_article_detail_html')
@@ -17,11 +17,24 @@ def generate_article_detail_html(article_id):
     article = Article.objects.get(id=article_id)
     # 获取当前文章的一级分类名称
     parent_category = ArticleCategory.objects.filter(id=article.category.parent_id).first()
+
+    # 获取当前文章的主评论
+    comments = Comment.objects.filter(article=article_id)
+
+    # 获取当前主评论的子评论
+    leader_comments = []
+    for comment in comments:
+        sub_comments = SubComment.objects.filter(comment_id=comment.id)
+        comment.subs = sub_comments
+        leader_comments.append(comment)
+
     # 渲染模板，生成静态html文件
 
     context = {
 
         'article': article,
+        'parent_category': parent_category,
+        'comments': comments,
 
     }
 

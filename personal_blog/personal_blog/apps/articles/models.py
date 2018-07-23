@@ -10,7 +10,7 @@ class ArticleCategory(models.Model):
     parent = models.ForeignKey('self', on_delete=models.SET_NULL, related_name='subs', null=True, blank=True, verbose_name='上级分类')
 
     class Meta:
-        db_table = 'tb_article_categories'
+        db_table = 'tb_categories'
         verbose_name = '文章分类'
         verbose_name_plural = '分类表'
 

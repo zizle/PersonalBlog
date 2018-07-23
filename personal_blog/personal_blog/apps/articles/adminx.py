@@ -20,7 +20,7 @@ class ArticleXAdmin(object):
         article_id = obj.id
         obj.delete()
 
-        # 补充自定义行为
+        # # 补充自定义行为
         from celery_tasks.html.tasks import generate_article_detail_html
         generate_article_detail_html.delay(article_id)
 

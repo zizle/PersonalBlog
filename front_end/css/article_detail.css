@@ -172,10 +172,10 @@
     float: right;
 }
 .comment_list{
-    border-bottom:1px solid #ebebeb;
+    /*border-bottom:1px solid #ebebeb;*/
     overflow:hidden;
     margin-top:15px;
-    padding-bottom:15px;
+    /*padding-bottom:15px;*/
 }
 
 .comment_list_con{

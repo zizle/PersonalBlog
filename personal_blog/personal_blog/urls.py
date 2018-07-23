@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'', include('verifications.urls')),
     url(r'', include('users.urls')),
     url(r'', include('articles.urls')),
+    # url(r'', include('comments.urls')),
 ]

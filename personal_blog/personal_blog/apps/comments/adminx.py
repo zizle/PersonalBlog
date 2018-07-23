@@ -9,3 +9,4 @@ class CommentAdmin(object):
 
 
 xadmin.site.register(models.Comment, CommentAdmin)
+xadmin.site.register(models.SubComment)

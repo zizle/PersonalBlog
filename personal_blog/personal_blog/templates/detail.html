@@ -11,8 +11,10 @@
 	<!--回到顶部按钮-->
 	<script src="../plugin/jquery.min.js"></script>
 	<!--背景轮播-->
+	<script src="../js/host.js"></script>
 	<script src="../js/backstretch.min.js"></script>
 	<script src="../js/vue-2.5.16.js"></script>
+	<script src="../js/axios-0.18.0.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -94,22 +96,23 @@
                     </div>
 
 						<hr>
-
+						<div id="app_collection">
 						<!--收藏按钮-->
 						<a href="javascript:;" class="collection block-center">收藏</a>
 						<a href="javascript:;" class="collected block-center"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
 
 						<!--上下篇指引-->
 						<div class="nextinfo">
-										<p class="last">上一篇：<a href="#">免费收录网站搜索引擎登录口大全</a></p>
-										<p class="next">下一篇：<a href="#">javascript显示年月日时间代码</a></p>
-									</div>
+							<p class="last">上一篇：<a href="#">免费收录网站搜索引擎登录口大全</a></p>
+							<p class="next">下一篇：<a href="#">javascript显示年月日时间代码</a></p>
+						</div>
+						</div>
 					</div>
-
+					<div id="app">
 					<!--未登录显示-->
 					<div class="comment_form_logout" style="display: block">
-				登录发表你的评论
-			</div>
+						登录发表你的评论
+					</div>
 
 					<!--已登录显示评论框-->
 					<form action="" class="comment_form">
@@ -119,13 +122,13 @@
 
 					<!--评论条数展示-->
 					<div class="comment_count">
-						4条评论
+						[[ comment_count ]]条评论
 					</div>
 
 					<!--评论列表开始-->
 					<div class="comment_list_con">
 					{% for comment in comments %}
-					<div class="comment_list">
+				<div class="comment_list">
 					<div class="person_pic fl">
 						<img src="../img/pic_code.jpg" alt="用户图标">
 					</div>
@@ -152,8 +155,6 @@
 						<div class="user_name2">用户{{ sub_comment.user }}回复@<a href="">{% if sub_comment.parent %}{{ sub_comment.parent.user }}{% else %}{{ comment.user }}{% endif %}</a></div>
 						<div class="reply_text">
 							{{ sub_comment.content }}
-							<!--遏制茅台酒价格过快上涨，多渠道供给，就不一定要买，租茅台酒也可以的，租售同权。开发共有产权茅台酒，让老百姓喝得起茅台酒，饮者有其酒。-->
-
 						</div>
 						<div class="comment_opt">
 						<div class="comment_time fl">{{ sub_comment.create_time }}</div>
@@ -167,20 +168,13 @@
 								</div>
 							</form>
 						</div>
-						<form class="sub_reply_form fl" style="display:none;">
-							<textarea  class="sub_reply_input"></textarea>
-
-							<div class="reply_btn fr">
-								<input type="reset" name="" class="reply_cancel" value="取消">
-								<input type="submit" name="" value="回复">
-							</div>
-						</form>
 					</div>
 					{% endfor %}
 				</div>
 					{% endfor %}
 					</div>
 					<!--评论列表结束-->
+					</div>
 				</div>
 			</div>
 
@@ -351,15 +345,16 @@
 
 //	背景轮播
 $.backstretch([
-    	'img/1.jpg',
-		'img/444.jpg',
-		'img/502.jpg',
-		'img/30.jpg',
-		'img/400.jpg',
-		'img/450.jpg',
+    	'../img/1.jpg',
+		'../img/444.jpg',
+		'../img/502.jpg',
+		'../img/30.jpg',
+		'../img/400.jpg',
+		'../img/450.jpg',
 	], {
 		fade : 5000, // 动画时长
 		duration : 2000 // 切换延时
 });
 </script>
+<script src="../js/detail.js"></script>
 </html>

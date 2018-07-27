@@ -1,6 +1,7 @@
 # _*_ coding:utf-8 _*_
 import xadmin
 from xadmin import views
+from . import models
 
 
 class BaseSetting(object):
@@ -20,4 +21,8 @@ class GlobalSettings(object):
 
 
 xadmin.site.register(views.CommAdminView, GlobalSettings)
+
+
+xadmin.site.register(models.UserCollection)
+xadmin.site.register(models.UserFan)
 

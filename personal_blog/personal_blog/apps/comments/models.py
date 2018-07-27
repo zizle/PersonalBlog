@@ -12,6 +12,8 @@ class Comment(BaseModel):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='评论者')
     article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='评论的文章')
     content = models.TextField(verbose_name='评论内容')
+    like_count = models.IntegerField(default=0, verbose_name='点赞数')
+    is_pass = models.BooleanField(default=False, verbose_name='通过审核')
 
     class Meta:
         db_table = 'tb_comments'
@@ -28,6 +30,8 @@ class SubComment(BaseModel):
     comment_id = models.ForeignKey(Comment, on_delete=models.CASCADE, verbose_name='主评论id')
     content = models.TextField(verbose_name='评论内容')
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='subs', verbose_name='上级评论')
+    like_count = models.IntegerField(default=0, verbose_name='点赞数')
+    is_pass = models.BooleanField(default=False, verbose_name='通过审核')
 
     class Meta:
         db_table = 'tb_sub_comments'

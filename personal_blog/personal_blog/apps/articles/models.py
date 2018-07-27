@@ -38,3 +38,17 @@ class Article(BaseModel):
 
     def __str__(self):
         return self.title
+
+
+class KeyWords(BaseModel):
+    """文章关键字表"""
+    article = models.ForeignKey(Article, on_delete=models.CASCADE, verbose_name='文章id')
+    word = models.CharField(max_length=10, verbose_name='关键字')
+
+    class Meta:
+        db_table = 'tb_words'
+        verbose_name = '关键字'
+        verbose_name_plural = '关键字表'
+
+    def __str__(self):
+        return self.article

@@ -27,5 +27,6 @@ class ArticleXAdmin(object):
 
 xadmin.site.register(models.ArticleCategory)
 xadmin.site.register(models.Article, ArticleXAdmin)
+xadmin.site.register(models.KeyWords)
 
 

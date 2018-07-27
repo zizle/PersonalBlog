@@ -19,12 +19,14 @@ def generate_article_detail_html(article_id):
     parent_category = ArticleCategory.objects.filter(id=article.category.parent_id).first()
 
     # 获取当前文章的主评论
-    comments = Comment.objects.filter(article=article_id)
+    comments = Comment.objects.order_by('-create_time').filter(article=article_id, is_pass=True)
+    # 主评论数
+    comments_count = comments.count()
 
     # 获取当前主评论的子评论
     leader_comments = []
     for comment in comments:
-        sub_comments = SubComment.objects.filter(comment_id=comment.id)
+        sub_comments = SubComment.objects.order_by('-create_time').filter(comment_id=comment.id, is_pass=True)
         comment.subs = sub_comments
         leader_comments.append(comment)
 
@@ -35,6 +37,7 @@ def generate_article_detail_html(article_id):
         'article': article,
         'parent_category': parent_category,
         'comments': comments,
+        'comments_count': comments_count,
 
     }
 

@@ -1,15 +1,28 @@
 from django.shortcuts import render
+from rest_framework.generics import CreateAPIView
+from rest_framework.views import Response, status
+
+from . import serializers
 
 # Create your views here.
-from rest_framework.views import APIView, Response
-
-from .models import Comment
-import json
 
 
-class CommentsCountView(APIView):
-    """当前文章的评论条数"""
-    def get(self, request, article_id):
-        count = Comment.objects.filter(article=article_id).count()
-        return Response({"count": count})
+class CreateCommentView(CreateAPIView):
+    """评论提交视图"""
+    def get_serializer_class(self):
+        request_data = self.request.data
+        article_id = request_data.get('article')
+        comment_id = request_data.get('comment')
+
+        if article_id and not comment_id:
+            return serializers.CommentSerializer
+        else:
+            return serializers.SubCommentSerializer
+
+
+
+
+
+
+
 

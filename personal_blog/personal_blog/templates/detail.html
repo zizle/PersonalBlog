@@ -115,7 +115,7 @@
 					</div>
 
 					<!--已登录显示评论框-->
-					<form action="" class="comment_form">
+					<form action="" class="comment_form" data-articleid="{{ article.id }}">
 						<textarea placeholder="请发表您的评论" class="comment_input"></textarea>
 						<input type="submit" name="" value="评 论" class="comment_sub">
 					</form>
@@ -140,10 +140,10 @@
 						<a href="javascript:;" class="comment_up has_comment_up fr">21111</a>
 						<a href="javascript:;" class="comment_reply fr">回复</a>
 						<form class="reply_form fl" style="display:none;">
-							<textarea  class="reply_input" name="text"></textarea>
-							<div class="comment_btn fr">
+							<textarea placeholder="请输入回复内容..."  class="reply_input" name="text"></textarea>
+							<div class="comment_btn fr" data-articleid="{{ article.id }}"  data-commentid="{{ comment.id }}">
 								<input type="reset" name="" class="reply_cancel" value="取消">
-								<input type="submit" name="" value="回复">
+								<input type="submit" name="" class="reply_sub" value="回复">
 							</div>
 						</form>
 					</div>
@@ -162,9 +162,9 @@
 							<a href="javascript:;" class="comment_reply fr">回复</a>
 							<form class="sub_reply_form fl" style="display:none;">
 								<textarea  class="sub_reply_input"></textarea>
-								<div class="reply_btn fr">
+								<div class="reply_btn fr" data-commentid="{{ comment.id }}" data-parent="{{ sub_comment.id }}">
 									<input type="reset" name="" class="reply_cancel" value="取消">
-									<input type="submit" name="" value="回复">
+									<input type="submit" name="" class="reply_sub" value="回复">
 								</div>
 							</form>
 						</div>
@@ -308,39 +308,6 @@
 		$(window).on("scroll", backToTopFun);
 		backToTopFun();
 	});
-
-	// // 回复窗口的显示与隐藏
-	// $('.comment_list_con').delegate('a,input','click',function(){
-    //
-     //    var sHandler = $(this).prop('class');
-    //
-     //    if(sHandler.indexOf('comment_reply')>=0)
-     //    {
-     //        $(this).next().toggle();
-     //    }
-    //
-     //    if(sHandler.indexOf('reply_cancel')>=0)
-     //    {
-     //        $(this).parent().parent().toggle();
-     //    }
-
-        // if(sHandler.indexOf('comment_up')>=0)
-        // {
-        //     var $this = $(this);
-        //     if(sHandler.indexOf('has_comment_up')>=0)
-        //     {
-        //         // 如果当前该评论已经是点赞状态，再次点击会进行到此代码块内，代表要取消点赞
-        //         $this.removeClass('has_comment_up')
-        //     }else {
-        //         $this.addClass('has_comment_up')
-        //     }
-        // }
-        //
-        // if(sHandler.indexOf('reply_sub')>=0)
-        // {
-        //     alert('回复评论')
-        // }
-    // });
 
 
 //	背景轮播

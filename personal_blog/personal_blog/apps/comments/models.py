@@ -27,7 +27,7 @@ class Comment(BaseModel):
 class SubComment(BaseModel):
     """文章评论子表"""
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL, verbose_name='评论者')
-    comment_id = models.ForeignKey(Comment, on_delete=models.CASCADE, verbose_name='主评论id')
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE, verbose_name='主评论id')
     content = models.TextField(verbose_name='评论内容')
     parent = models.ForeignKey('self', null=True, blank=True, on_delete=models.SET_NULL, related_name='subs', verbose_name='上级评论')
     like_count = models.IntegerField(default=0, verbose_name='点赞数')

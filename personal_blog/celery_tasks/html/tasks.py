@@ -26,7 +26,7 @@ def generate_article_detail_html(article_id):
     # 获取当前主评论的子评论
     leader_comments = []
     for comment in comments:
-        sub_comments = SubComment.objects.order_by('-create_time').filter(comment_id=comment.id, is_pass=True)
+        sub_comments = SubComment.objects.order_by('-create_time').filter(comment=comment.id, is_pass=True)
         comment.subs = sub_comments
         leader_comments.append(comment)
 

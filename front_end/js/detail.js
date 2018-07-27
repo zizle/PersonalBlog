@@ -2,6 +2,7 @@ function getCookie(name) {
     var r = document.cookie.match("\\b" + name + "=([^;]*)\\b");
     return r ? r[1] : undefined;
 }
+var host = 'http://127.0.0.1:8000';
 
 
 $(function(){
@@ -23,12 +24,41 @@ $(function(){
     $(".collected").click(function () {
         alert('取消收藏')
 
-    })
+    });
+    // 添加回复输入表单
 
-        // 评论提交，阻止form表单自动提交
+
+
+    // 评论提交，阻止form表单自动提交
     $(".comment_form, .reply_form, .sub_reply_form").submit(function (e) {
         e.preventDefault();
 
+    });
+    // 主评论提交
+    $(".comment_form").submit(function (e) {
+        e.preventDefault();
+        var params = {
+            'content': $('.comment_input').val(),
+            'article': parseInt($(this).attr('data-articleid')),
+            'user': parseInt(localStorage.user_id),
+
+        };
+        $.ajax({
+            url: host + '/articles/comment/',
+            type:'post',
+            data:JSON.stringify(params),
+            contentType:'application/json',
+        })
+            .done(function (response) {
+                 // 输入框失去焦点
+                $('.comment_sub').blur();
+                // 清空输入框内容
+                $('.comment_input').val('');
+                alert('评论成功!');
+            })
+            .fail(function () {
+                alert('服务器超时，请重试！')
+            })
     })
 
     $('.comment_list_con').delegate('a,input','click',function(){
@@ -61,7 +91,32 @@ $(function(){
 
         if(sHandler.indexOf('reply_sub')>=0)
         {
-            alert('回复评论')
+            // 回复评论，回复子评论
+            var $this = $(this);
+            var params = {
+                'content': $this.parent().prev().val(),
+                'article': parseInt($(this).parent().attr('data-articleid')),
+                'user': parseInt(localStorage.user_id),
+                'comment': parseInt($(this).parent().attr('data-commentid')),
+                'parent': parseInt($(this).parent().attr('data-parent'))
+            };
+            $.ajax({
+                url: host + '/articles/comment/',
+                type:'post',
+                data:JSON.stringify(params),
+                contentType:'application/json',
+            })
+            .done(function (response) {
+                 // 输入框失去焦点
+                $('.comment_sub').blur();
+                // 清空输入框内容
+                $('.comment_input').val('');
+                alert('评论成功!');
+            })
+            .fail(function () {
+                alert('服务器超时，请重试！')
+            })
+
         }
     })
 

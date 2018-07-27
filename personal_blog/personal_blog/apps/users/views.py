@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from rest_framework.generics import CreateAPIView
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework.views import APIView, Response
+# from rest_framework.response import Response
 
 from . import serializers
-from .models import User
+from .models import User, UserCollection
 
 
 # 检查用户名是否重复
@@ -29,3 +29,17 @@ class CreateUserView(CreateAPIView):
     # 保存
     # 返回
     serializer_class = serializers.CreateUserSerializer
+
+
+class UserCollectionArticleView(APIView):
+    """用户收藏文章查询"""
+    def get(self, request, user_id):
+        article_id = int(request.GET.get('article'))
+        articles = [article.id for article in UserCollection.objects.filter(user=user_id)]
+        if article_id in articles:
+            return Response({'colleted': True})
+        else:
+            return Response({'colleted': False})
+
+
+

@@ -10,5 +10,6 @@ urlpatterns = [
     url(r'^users/$', views.CreateUserView.as_view()),
     url(r'^usernames/(?P<username>\w{5,20})/count/$', views.UsernameCountView.as_view()),
     # 配置登录的url
-    url(r'^authorizations/$', obtain_jwt_token)
+    url(r'^authorizations/$', obtain_jwt_token),
+    url(r'^collections/(?P<user_id>\d+)/$', views.UserCollectionArticleView.as_view()),
 ]

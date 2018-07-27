@@ -6,6 +6,42 @@ var host = 'http://127.0.0.1:8000';
 
 
 $(function(){
+    // 获取当前用户是否为登录状态
+    var user_id = getCookie('user_id');
+    if (user_id) {
+        $('.comment_form').show();
+        $('.comment_form_logout').hide();
+        // 用户登录了，发送ajax请求查看当前文章是否被收藏
+        $.ajax({
+            url: host + '/collections/'+ user_id + '/?article=' + $('.comment_form').attr('data-articleid'),
+            type:'get',
+            contentType:'application/json',
+        })
+            .done(function (response) {
+                if (response.colleted){
+                    // 显示已收藏
+                    $('.collected').show();
+                    $('.collection').hide();
+                }else{
+                    $('.collected').hide();
+                    $('.collection').show();
+                }
+            })
+            .fail(function () {
+                $('.collected').hide();
+                $('.collection').show();
+                alert('服务器超时，请重刷新！')
+            })
+    }else{
+        $('.comment_form').hide();
+        $('.comment_form_logout').show();
+        // 用户未登录，显示收藏标签
+        $('.collected').hide();
+        $('.collection').show();
+
+    }
+
+
 
     // 打开登录框
     $('.comment_form_logout').click(function () {
@@ -52,9 +88,10 @@ $(function(){
         })
             .done(function (response) {
                  // 输入框失去焦点
-                $('.comment_sub').blur();
+                $('.reply_sub').blur();
                 // 清空输入框内容
-                $('.comment_input').val('');
+                $('.reply_input').val('');
+                $('.sub_reply_input').val('');
                 alert('评论成功!');
             })
             .fail(function () {

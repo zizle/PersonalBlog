@@ -24,24 +24,22 @@
 			<li><a href="/">首页</a></li>
 			<li><a href="#">知识学习</a>
 				<ul class="submenu">
-					<li><a href="#">Python</a></li>
-					<li><a href="#">JavaScript</a></li>
-					<li><a href="#">CSS</a></li>
-
+					{% for knowledge in knowledge_cat%}
+					<li><a href="#">{{ knowledge }}</a></li>
+					{% endfor %}
 				</ul>
 			</li>
 			<li class="active"><a href="#s2">技术文章</a>
 				<ul class="submenu">
-					<li><a href="#">Mac OS</a></li>
-					<li><a href="#">Windows</a></li>
-					<li><a href="#">Linux</a></li>
+					{% for skills in skills_cat%}
+					<li><a href="#">{{ skills }}</a></li>
+					{% endfor %}
 				</ul>
 			</li>
 			<li class="active"><a href="#s2">便签墙</a>
 				<ul class="submenu">
 					<li><a href="#">随笔</a></li>
 					<li><a href="#">留言板</a></li>
-
 				</ul>
 			</li>
 			<li><a href="user_center.html">个人中心</a>
@@ -51,7 +49,6 @@
 					<li><a href="../passport.html">登录·注册</a></li>
 					<li><a href="#">QQ登录</a></li>
 					<li><a href="#">微信登录</a></li>
-
 				</ul>
 			</li>
 		</ul>
@@ -61,7 +58,6 @@
 	  <li><a href="../home.html">首页</a></li>
 	  <li><a href="#">{{ parent_category }}</a></li>
 	  <li><a href="#">{{ article.category }}</a></li>
-
 	  <li class="active">{{ article.title }}</li>
 	</ol>
 	<div class="w_main_row">
@@ -92,7 +88,6 @@
 					</div>
 
 					<hr>
-					<div id="app_collection">
 					<!--收藏按钮-->
 					<a href="javascript:;" class="collection block-center">收藏</a>
 					<a href="javascript:;" class="collected block-center"><span class="out">已收藏</span><span class="over">取消收藏</span></a>
@@ -101,7 +96,6 @@
 					<div class="nextinfo">
 						<p class="last">上一篇：<a href="#">{{ pre_article }}</a></p>
 						<p class="next">下一篇：<a href="#">{{ next_article }}</a></p>
-					</div>
 					</div>
 				</div>
 
@@ -181,90 +175,29 @@
 				</div>
 				<div class="panel-body">
 					<ul class="list-unstyled sidebar">
-								<li><a href="/post/04928311">排序算法之冒泡排序 － java实现</a></li>
-								<li><a href="/post/32097759">快速搭建基于二进制日志文件的 mysql 复制</a></li>
-								<li><a href="/post/09196557">web 服务器负载均衡教程，快速搭建高可用服务器集群</a></li>
-								<li><a href="/post/20654391">使用 redis 和 spring-session 实现 tomcat、glassfish 等 web 服务器集群 session 共享</a></li>
-								<li><a href="/post/41501569">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></li>
-								<li><a href="/post/89658700">mysql 复制（replication）基础概念和应用场景简介</a></li>
-								<li><a href="/post/03088922">redis 单节点在 Linux 生产环境的安装和简单配置</a></li>
-								<li><a href="/post/05203355">使用 jQuery 的 val() 方法来获取以及设置表单元素值</a></li>
-								<li><a href="/post/03120718">使用 jQuery 的 removeProp() 方法来删除元素的特性（property）</a></li>
-								<li><a href="/post/37454977">使用 jQuery 的 prop() 方法来获取以及设置元素的特性（property）</a></li>
+						{% for article in newest_article %}
+						<li><a href="/articles/{{ article.id }}.html">{{ article.title }}</a></li>
+						{% endfor %}
 						</ul>
 				</div>
 			</div>
 
 			<div class="panel panel-default">
-					  <div class="panel-heading">
-					    <h3 class="panel-title">友情链接</h3>
-					  </div>
-					  <div class="panel-body">
-					    <div class="newContent">
-					    	<ul class="list-unstyled sidebar shiplink">
-								<li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
-								<li><a href="https://www.oschina.net/" target="_blank">开源中国</a></li>
-								<li><a href="http://www.ulewo.com/" target="_blank">有乐网</a></li>
-								<li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
-								<li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
-							</ul>
-					    </div>
-					  </div>
-					</div>
-
-			<div class="panel panel-default">
-					  <div class="panel-heading">
-					    <h3 class="panel-title">友情链接</h3>
-					  </div>
-					  <div class="panel-body">
-					    <div class="newContent">
-					    	<ul class="list-unstyled sidebar shiplink">
-								<li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
-								<li><a href="https://www.oschina.net/" target="_blank">开源中国</a></li>
-								<li><a href="http://www.ulewo.com/" target="_blank">有乐网</a></li>
-								<li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
-								<li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
-							</ul>
-					    </div>
-					  </div>
-					</div>
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">最新发布</h3>
+			  <div class="panel-heading">
+				<h3 class="panel-title">友情链接</h3>
+			  </div>
+			  <div class="panel-body">
+				<div class="newContent">
+					<ul class="list-unstyled sidebar shiplink">
+						<li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+						<li><a href="https://www.oschina.net/" target="_blank">开源中国</a></li>
+						<li><a href="http://www.ulewo.com/" target="_blank">有乐网</a></li>
+						<li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
+						<li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
+					</ul>
 				</div>
-				<div class="panel-body">
-					<ul class="list-unstyled sidebar">
-								<li><a href="/post/04928311">排序算法之冒泡排序 － java实现</a></li>
-								<li><a href="/post/32097759">快速搭建基于二进制日志文件的 mysql 复制</a></li>
-								<li><a href="/post/09196557">web 服务器负载均衡教程，快速搭建高可用服务器集群</a></li>
-								<li><a href="/post/20654391">使用 redis 和 spring-session 实现 tomcat、glassfish 等 web 服务器集群 session 共享</a></li>
-								<li><a href="/post/41501569">使用 Nginx 实现 tomcat、glassfish 等 web 服务器负载均衡</a></li>
-								<li><a href="/post/89658700">mysql 复制（replication）基础概念和应用场景简介</a></li>
-								<li><a href="/post/03088922">redis 单节点在 Linux 生产环境的安装和简单配置</a></li>
-								<li><a href="/post/05203355">使用 jQuery 的 val() 方法来获取以及设置表单元素值</a></li>
-								<li><a href="/post/03120718">使用 jQuery 的 removeProp() 方法来删除元素的特性（property）</a></li>
-								<li><a href="/post/37454977">使用 jQuery 的 prop() 方法来获取以及设置元素的特性（property）</a></li>
-						</ul>
-				</div>
+			  </div>
 			</div>
-
-			<div class="panel panel-default">
-					  <div class="panel-heading">
-					    <h3 class="panel-title">友情链接</h3>
-					  </div>
-					  <div class="panel-body">
-					    <div class="newContent">
-					    	<ul class="list-unstyled sidebar shiplink">
-								<li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
-								<li><a href="https://www.oschina.net/" target="_blank">开源中国</a></li>
-								<li><a href="http://www.ulewo.com/" target="_blank">有乐网</a></li>
-								<li><a href="http://www.sina.com.cn/" target="_blank">新浪网</a></li>
-								<li><a href="http://www.qq.com/" target="_blank">腾讯网</a></li>
-							</ul>
-					    </div>
-					  </div>
-					</div>
 		</div>
 	</div>
 </div>

@@ -12,6 +12,10 @@ from comments.models import Comment, SubComment
 @celery_app.task(name='generate_article_detail_html')
 def generate_article_detail_html(article_id):
     """生成静态页面的文章详情页"""
+    # 获取知识学习的分类
+    knowledge_cat = ArticleCategory.objects.filter(parent=1)
+    # 获取技术文章的分类
+    skills_cat = ArticleCategory.objects.filter(parent=2)
 
     # 获取当前文章
     article = Article.objects.get(id=article_id)
@@ -44,10 +48,13 @@ def generate_article_detail_html(article_id):
         comment.subs = sub_comments
         leader_comments.append(comment)
 
+    # 获取最新发布文章列表
+    newest_article = Article.objects.order_by('create_time').all()[0:9]
+
     # 渲染模板，生成静态html文件
-
     context = {
-
+        'knowledge_cat': knowledge_cat,
+        'skills_cat': skills_cat,
         'article': article,
         'key_words': key_words,
         'pre_article': pre_article,
@@ -55,7 +62,7 @@ def generate_article_detail_html(article_id):
         'parent_category': parent_category,
         'comments': comments,
         'comments_count': comments_count,
-
+        'newest_article': newest_article,
     }
 
     template = loader.get_template('detail.html')

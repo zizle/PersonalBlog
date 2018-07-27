@@ -51,4 +51,4 @@ class KeyWords(BaseModel):
         verbose_name_plural = '关键字表'
 
     def __str__(self):
-        return self.article
+        return self.word

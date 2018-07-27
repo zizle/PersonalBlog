@@ -5,7 +5,7 @@ from django.template import loader
 from django.conf import settings
 import os
 
-from articles.models import Article, ArticleCategory
+from articles.models import Article, ArticleCategory, KeyWords
 from comments.models import Comment, SubComment
 
 
@@ -26,11 +26,11 @@ def generate_article_detail_html(article_id):
     except Article.DoesNotExist:
         next_article = '无'
 
-
-    # 获取下一篇文章
-
     # 获取当前文章的一级分类名称
     parent_category = ArticleCategory.objects.filter(id=article.category.parent_id).first()
+
+    # 获取当前文章的关键字
+    key_words = KeyWords.objects.filter(article=article_id)
 
     # 获取当前文章的主评论
     comments = Comment.objects.order_by('-create_time').filter(article=article_id, is_pass=True)
@@ -49,6 +49,7 @@ def generate_article_detail_html(article_id):
     context = {
 
         'article': article,
+        'key_words': key_words,
         'pre_article': pre_article,
         'next_article': next_article,
         'parent_category': parent_category,

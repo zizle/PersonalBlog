@@ -103,8 +103,8 @@
 
 						<!--上下篇指引-->
 						<div class="nextinfo">
-							<p class="last">上一篇：<a href="#">免费收录网站搜索引擎登录口大全</a></p>
-							<p class="next">下一篇：<a href="#">javascript显示年月日时间代码</a></p>
+							<p class="last">上一篇：<a href="#">{{ pre_article }}</a></p>
+							<p class="next">下一篇：<a href="#">{{ next_article }}</a></p>
 						</div>
 						</div>
 					</div>
@@ -161,7 +161,7 @@
 							<a href="javascript:;" class="comment_up fr">赞</a>
 							<a href="javascript:;" class="comment_reply fr">回复</a>
 							<form class="sub_reply_form fl" style="display:none;">
-								<textarea  class="sub_reply_input"></textarea>
+								<textarea placeholder="请输入回复内容..." class="sub_reply_input"></textarea>
 								<div class="reply_btn fr" data-commentid="{{ comment.id }}" data-parent="{{ sub_comment.id }}">
 									<input type="reset" name="" class="reply_cancel" value="取消">
 									<input type="submit" name="" class="reply_sub" value="回复">

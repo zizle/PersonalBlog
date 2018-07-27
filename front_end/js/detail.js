@@ -40,7 +40,8 @@ $(function(){
         var params = {
             'content': $('.comment_input').val(),
             'article': parseInt($(this).attr('data-articleid')),
-            'user': parseInt(localStorage.user_id),
+            // 'user': parseInt(localStorage.user_id),
+            'user': parseInt(getCookie('user_id')),
 
         };
         $.ajax({
@@ -96,7 +97,8 @@ $(function(){
             var params = {
                 'content': $this.parent().prev().val(),
                 'article': parseInt($(this).parent().attr('data-articleid')),
-                'user': parseInt(localStorage.user_id),
+                // 'user': parseInt(localStorage.user_id),
+                'user':parseInt(getCookie('user_id')),
                 'comment': parseInt($(this).parent().attr('data-commentid')),
                 'parent': parseInt($(this).parent().attr('data-parent'))
             };

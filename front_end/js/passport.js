@@ -68,6 +68,14 @@ window.onload = function () {
 
         },
         methods: {
+        	//设置cookie
+		  	set_cookie(user_id, exdays) {
+			var exdate=new Date();//获取时间
+			exdate.setTime(exdate.getTime() + 24*60*60*1000*exdays);//保存的天数
+			//字符串拼接cookie
+			window.document.cookie="user_id"+'=' + user_id + ";path=/;expires="+exdate.toGMTString();
+			},
+
         	// 显示注册框
             show_reg: function () {
 
@@ -294,6 +302,8 @@ window.onload = function () {
 						if (!return_url){
 							return_url = '/home.html';
 						}
+						// 登录成功保存cookie
+						this.set_cookie(response.data.user_id, 1);
 						location.href = return_url;
 					})
 					.catch(error => {

@@ -15,6 +15,20 @@ def generate_article_detail_html(article_id):
 
     # 获取当前文章
     article = Article.objects.get(id=article_id)
+    try:
+        # 获取上一篇文章
+        pre_article = Article.objects.get(id=article_id-1).title
+    except Article.DoesNotExist:
+        pre_article = '无'
+    try:
+        # 获取下一篇文章
+        next_article = Article.objects.get(id=article_id + 1).title
+    except Article.DoesNotExist:
+        next_article = '无'
+
+
+    # 获取下一篇文章
+
     # 获取当前文章的一级分类名称
     parent_category = ArticleCategory.objects.filter(id=article.category.parent_id).first()
 
@@ -35,6 +49,8 @@ def generate_article_detail_html(article_id):
     context = {
 
         'article': article,
+        'pre_article': pre_article,
+        'next_article': next_article,
         'parent_category': parent_category,
         'comments': comments,
         'comments_count': comments_count,

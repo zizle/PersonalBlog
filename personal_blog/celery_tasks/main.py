@@ -1,4 +1,5 @@
 # _*_ coding:utf-8 _*_
+# 运行任务方式：在personal_blog目录下执行celery -A celery_tasks.main worker -l info
 from celery import Celery
 # 让celery使用django的配置文件
 import os

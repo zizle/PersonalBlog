@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from django_redis import get_redis_connection
 from personal_blog.libs.captcha.captcha import captcha
-from django.http import HttpResponse
+from django.http import HttpResponse, StreamingHttpResponse
 from rest_framework.generics import CreateAPIView
 
 from . import constants

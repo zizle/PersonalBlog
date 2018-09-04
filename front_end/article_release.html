@@ -29,7 +29,7 @@
     </div>
 </div>
 <div class="inframe_body" id="app">
-    <form class="release_form">
+    <form class="release_form" @submit.prevent="article_submit">
         <h3>个人文章发布</h3>
         <div class="form-group"><label>*文章标题：</label><input type="text" class="input_txt2" name="title"></div>
         <div class="form-group">

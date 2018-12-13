@@ -1,5 +1,5 @@
 from django.db import models
-from personal_blog.utils.models import BaseModel
+from utils.models import BaseModel
 
 from users.models import User
 

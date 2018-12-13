@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
-from personal_blog.utils.models import BaseModel
+from utils.models import BaseModel
 
 # Create your models here.
 

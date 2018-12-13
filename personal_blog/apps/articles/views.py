@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework.viewsets import ReadOnlyModelViewSet
-from rest_framework.generics import ListAPIView, GenericAPIView
+from rest_framework.generics import ListAPIView, GenericAPIView, CreateAPIView
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
@@ -37,3 +37,9 @@ class TopArticleView(APIView):
         article = Article.objects.filter(is_top=True).first()
         serializer = serializers.HomeArticleSerializer(article)
         return Response(serializer.data)
+
+
+class CreateArticle(CreateAPIView):
+    """文章提交接口"""
+    serializer_class = serializers.CreateArticleSerializer
+

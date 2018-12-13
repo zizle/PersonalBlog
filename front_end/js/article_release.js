@@ -36,6 +36,8 @@ var vm = new Vue({
     methods:{
         article_submit:function () {
             console.log('文章提交')
+            // 获取文章的内容
+
         }
     }
 

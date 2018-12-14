@@ -6,8 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/user.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script type="text/javascript" src="js/jquery-1.4.min.js"></script>
-	<script type="text/javascript" src="js/jquery.form.min.js"></script>
+{#	<script type="text/javascript" src="js/jquery-1.4.min.js"></script>#}
+{#	<script type="text/javascript" src="js/jquery.form.min.js"></script>#}
+    <script src="js/backstretch.min.js"></script>
 	<!--<script type="text/javascript" src="../js/main.js"></script>-->
 </head>
 <body>
@@ -57,4 +58,19 @@
 	<!-- 注册表单 -->
 
 </body>
+<script>
+
+    // 	背景图片轮播
+	$.backstretch([
+			'img/1.jpg',
+			'img/444.jpg',
+			'img/502.jpg',
+			'img/30.jpg',
+			'img/400.jpg',
+			'img/450.jpg',
+		], {
+		fade : 5000, // 动画时长
+		duration : 2000 // 切换延时
+	});
+</script>
 </html>

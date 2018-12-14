@@ -227,7 +227,7 @@ LOGGING = {
 
 # 指明自定义的异常处理
 REST_FRAMEWORK = {
-    "EXCEPTION_HANDLER": "personal_blog.utils.exceptions.exception_handler",
+    "EXCEPTION_HANDLER": "utils.exceptions.exception_handler",
 }
 
 # 将定义的user模型类用于django认证系统

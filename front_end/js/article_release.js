@@ -38,6 +38,7 @@ var vm = new Vue({
             console.log('文章提交')
             // 获取文章的内容
 
+
         }
     }
 

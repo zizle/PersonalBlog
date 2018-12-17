@@ -43,3 +43,5 @@ class CreateArticle(CreateAPIView):
     """文章提交接口"""
     serializer_class = serializers.CreateArticleSerializer
 
+    def post(self, request, *args, **kwargs):
+        return Response({"data":"success!"})

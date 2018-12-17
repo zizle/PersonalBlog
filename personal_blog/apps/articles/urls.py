@@ -9,6 +9,7 @@ from . import views
 urlpatterns = [
     url(r'^articles/$', views.HomeArticlesView.as_view()),
     url(r'^article/top/$', views.TopArticleView.as_view()),
+    url(r'^article/add/$', views.CreateArticle.as_view()),
 ]
 
 
